@@ -44,42 +44,15 @@ class TryCardView(TemplateView):
 
     def get(self, request, try_card_id):
         try_card = get_object_or_404(UserTryCard, id=try_card_id)
+        user_try = try_card.usertry
         if try_card.usertry.user != request.user:
             messages.error(request, "You are not allowed to see this card")
             return redirect("home")
-        correct_cards = len(
-            UserTryCard.objects.filter(
-                usertry=try_card.usertry, status=UserTryCard.Status.CORRECT
-            )
-        )
-        semi_correct_cards = len(
-            UserTryCard.objects.filter(
-                usertry=try_card.usertry, status=UserTryCard.Status.SEMI_CORRECT
-            )
-        )
-        wrong_cards = len(
-            UserTryCard.objects.filter(
-                usertry=try_card.usertry, status=UserTryCard.Status.WRONG
-            )
-        )
-        cards_total = len(UserTryCard.objects.filter(usertry=try_card.usertry))
-        cards_done = (
-            len(
-                UserTryCard.objects.filter(
-                    usertry=try_card.usertry, status=UserTryCard.Status.CORRECT
-                )
-            )
-            + len(
-                UserTryCard.objects.filter(
-                    usertry=try_card.usertry, status=UserTryCard.Status.SEMI_CORRECT
-                )
-            )
-            + len(
-                UserTryCard.objects.filter(
-                    usertry=try_card.usertry, status=UserTryCard.Status.WRONG
-                )
-            )
-        )
+        correct_cards = len(user_try.get_correct_cards())
+        semi_correct_cards = len(user_try.get_semi_correct_cards())
+        wrong_cards = len(user_try.get_wrong_cards())
+        cards_total = len(user_try.get_all_cards())
+        cards_done = correct_cards + semi_correct_cards + wrong_cards
         done_percentage = int(cards_done / cards_total * 100)
         context = {
             "try_card": try_card,
@@ -123,7 +96,81 @@ class TryCardView(TemplateView):
                 if len(user_try_cards) > 0:
                     return redirect("try_card", user_try_cards[0])
                 else:
-                    return redirect("home")
-        return redirect("home")
-    
+                    return redirect("try_detail", try_card.usertry.id)
+        return redirect("try_detail", try_card.usertry.id)
 
+
+class UserTryDetailView(TemplateView):
+    template_name = "try_detail.html"
+
+    def get(self, request, user_try_id):
+        user_try = get_object_or_404(UserTry, id=user_try_id)
+        if user_try.user != request.user:
+            messages.error(request, "You are not allowed to see this card")
+            return redirect("home")
+        correct_cards = len(user_try.get_correct_cards())
+        semi_correct_cards = len(user_try.get_semi_correct_cards())
+        wrong_cards = len(user_try.get_wrong_cards())
+
+        cards_done = correct_cards + semi_correct_cards + wrong_cards
+        all_questions = user_try.get_all_cards()
+        cards_total = len(all_questions)
+        done_percentage = int(cards_done / cards_total * 100)
+        if cards_total == cards_done:
+            is_finished = True
+        else:
+            is_finished = False
+        context = {
+            "user_try": user_try,
+            "all_questions": all_questions,
+            "cards_total": cards_total,
+            "cards_done": cards_done,
+            "done_percentage": done_percentage,
+            "correct_cards": correct_cards,
+            "semi_correct_cards": semi_correct_cards,
+            "wrong_cards": wrong_cards,
+            "is_finished": is_finished,
+        }
+        return render(request, self.template_name, context)
+
+    def post(self, request, user_try_id):
+        user_try = get_object_or_404(UserTry, id=user_try_id)
+        if user_try.user != request.user:
+            messages.error(request, "You are not allowed to see this card")
+            return redirect("home")
+        if "answer" in request.POST:
+            answer = request.POST["answer"]
+            new_user_try = UserTry.objects.create(
+                fishcardset=user_try.fishcardset, user=request.user
+            )
+            new_try_cards = []
+            new_try_cards.extend(user_try.get_wrong_cards())
+            if answer == "correct" or answer == "semi-correct":
+                new_try_cards.extend(user_try.get_semi_correct_cards())
+            if answer == "correct":
+                new_try_cards.extend(user_try.get_correct_cards())
+            if len(new_try_cards) == 0:
+                messages.error(request, "Something went wrong (no cards to retry)")
+                UserTry.objects.filter(id=new_user_try.id).delete()
+                return redirect("try_detail", user_try.id)
+            else:
+                for new_try_card in new_try_cards:
+                    UserTryCard.objects.create(
+                        usertry=new_user_try, fishcard=new_try_card.fishcard
+                    )
+            request.session["user_try_cards"] = new_user_try.get_all_unanswered_cards_ids()
+            return redirect("try_card", request.session["user_try_cards"][0])
+        else:
+            messages.error(request, "Something went wrong")
+            return redirect("try_detail", user_try.id)
+
+def restore_try(request, user_try_id):
+    user_try = get_object_or_404(UserTry, id=user_try_id)
+    if user_try.user != request.user:
+        messages.error(request, "You are not allowed to see this card")
+        return redirect("home")
+    if user_try.is_finished():
+        messages.error(request, "You can't restore a finished try")
+        return redirect("home")
+    request.session["user_try_cards"] = user_try.get_all_unanswered_cards_ids()
+    return redirect("try_card", request.session["user_try_cards"][0])

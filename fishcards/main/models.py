@@ -18,13 +18,13 @@ class FishCardSet(models.Model):
 
 
 class FishCard(models.Model):
-    fishcardset = models.ForeignKey(FishCardSet, on_delete=models.CASCADE)
+    fishcardset = models.ForeignKey(FishCardSet, on_delete=models.SET_NULL, null=True)
     question = CustomRichTextUploadingField()
     answer = CustomRichTextUploadingField()
 
     def __str__(self) -> str:
-        if len(self.question) > 30:
-            return self.question[:30] + "..."
+        if len(self.question) > 33:
+            return self.question[3:33] + "..."
         return self.question
 
 
@@ -33,7 +33,30 @@ class UserTry(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    
+    def __str__(self) -> str:
+        return f"{self.user} - {self.fishcardset}"
+    
+    def get_correct_cards(self):
+        return UserTryCard.objects.filter(usertry=self, status=UserTryCard.Status.CORRECT)
+    
+    def get_semi_correct_cards(self):
+        return UserTryCard.objects.filter(usertry=self, status=UserTryCard.Status.SEMI_CORRECT)
+    
+    def get_wrong_cards(self):
+        return UserTryCard.objects.filter(usertry=self, status=UserTryCard.Status.WRONG)
+    
+    def get_not_answered_cards(self):
+        return UserTryCard.objects.filter(usertry=self, status=UserTryCard.Status.NOT_ANSWERED)
+    
+    def get_all_cards(self):
+        return UserTryCard.objects.filter(usertry=self)
+    
+    def get_all_unanswered_cards_ids(self):
+        return [card.id for card in self.get_not_answered_cards().order_by("?")]
+    
+    def is_finished(self):
+        return len(self.get_not_answered_cards()) == 0
 
 class UserTryCard(models.Model):
     class Status(models.TextChoices):

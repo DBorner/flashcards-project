@@ -1,0 +1,82 @@
+{% extends "template.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="{{done_percentage}}" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width: {{done_percentage}}%">{{done_percentage}} %</div>
+    </div>
+    <div class="card text-center mt-2">
+        <div class="card-header">
+        {{user_try.fishcardset.name}} {{cards_done}}/{{cards_total}}
+        {% if correct_cards > 0 %}
+        <span class="badge rounded-pill text-bg-success">{{correct_cards}}</span>
+        {% endif %}
+        {% if semi_correct_cards > 0 %}
+        <span class="badge rounded-pill text-bg-warning">{{semi_correct_cards}}</span>
+        {% endif %}
+        {% if wrong_cards > 0 %}
+        <span class="badge rounded-pill text-bg-danger">{{wrong_cards}}</span>
+        {% endif %}
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Question</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for question in all_questions %}
+                  <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{question.fishcard}}</td>
+                    <td>{% if question.status == "correct" %}
+                        <span class="badge text-bg-success">Correct</span>
+                        {% elif question.status == "wrong" %}
+                        <span class="badge text-bg-danger">Wrong</span>
+                        {% elif question.status == "semi_correct" %}
+                        <span class="badge text-bg-warning">Semi-correct</span>
+                        {% else %}
+                        <span class="badge text-bg-secondary">Not answered</span>
+                        {% endif %}</td>
+                    <td><a href="{% url "try_card" question.id %}" type="button" class="btn btn-link">Link</a></td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+        {% if is_finished %}
+            <form id="answer-form" method="post" action="{% url 'try_detail' user_try.id %} ">
+                {% csrf_token %}
+                <h5 class="card-title">You have finished this try</h5>
+                <p class="card-text">You have answered all the questions. You can now try again:</p>
+                <input type="hidden" id="answer-input" name="answer" value="">
+                <button type="button" class="answer-btn btn btn-danger" {% if wrong_cards == 0 %}disabled{% endif %} data-answer="wrong">Only wrong</button>
+                <button type="button" class="answer-btn btn btn-warning" {% if semi_correct_cards == 0 %}disabled{% endif %} data-answer="semi-correct">+ Semi-Correct</button>
+                <button type="button" class="answer-btn btn btn-success" data-answer="all">All questions</button>
+            </form>
+        {% else %}
+        <a href="{% url 'restore_try' user_try.id %}" class="btn btn-primary">Restore try</a>
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+
+<script>
+    {% if is_finished %}
+    $(document).ready(function(){
+         $('.answer-btn').click(function() {
+            var answerValue = $(this).data('answer');
+            $('#answer-input').val(answerValue); 
+            $('#answer-form').submit();
+        });
+    });
+    {% endif %}
+</script>
+
+{% endblock %}

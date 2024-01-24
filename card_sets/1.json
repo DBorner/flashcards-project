@@ -1,7 +1,7 @@
 {
-    "name": "IoT2",
+    "name": "IoT",
     "description": "Fiszki na egzamin z IoT🙂\r\nAutor: Jakub Ner",
-    "image": "/media/uploads/5_20240124233108.jpg",
+    "image": "uploads/5_20240124233108.jpg",
     "cards": [
         {
             "question": "<p>Czym jest internet Rzeczy?</p>",

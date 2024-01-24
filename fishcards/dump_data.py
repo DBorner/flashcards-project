@@ -26,7 +26,7 @@ def dump_fish_card_sets():
             {
                 "name": card_set.name,
                 "description": card_set.description,
-                "image": card_set.image.url if card_set.image else None,
+                "image": card_set.image.name if card_set.image else None,
                 "cards": cards,
             }
         )

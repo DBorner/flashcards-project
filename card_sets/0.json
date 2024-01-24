@@ -1,7 +1,7 @@
 {
-    "name": ".NET2",
+    "name": ".NET",
     "description": "Fiszki na egzamin z .NET'a 🙂\r\nAutor: Daniel Börner",
-    "image": "/media/uploads/None_20240124190822.jpg",
+    "image": "uploads/None_20240124190822.jpg",
     "cards": [
         {
             "question": "<p><strong>Tr&oacute;jwarstwowa</strong> aplikacja webowa składa się z:</p>",

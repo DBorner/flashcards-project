@@ -2,6 +2,16 @@
 
 {% block title %}{{ title }}{% endblock %}
 
+{% block css %}
+<style>
+    .try_card {
+        img {
+            max-width: 100%;
+        }
+    }
+</style>
+{% endblock %}
+
 {% block content %}
     <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="{{done_percentage}}" aria-valuemin="0" aria-valuemax="100">
         <div class="progress-bar" style="width: {{done_percentage}}%">{{done_percentage}} %</div>
@@ -19,7 +29,7 @@
         <span class="badge rounded-pill text-bg-danger">{{wrong_cards}}</span>
         {% endif %}
         </div>
-        <div class="card-body">
+        <div class="card-body try_card">
         <p class="card-text">{{try_card.fishcard.question|safe }}</p>
         <button id='show-answer' class="btn btn-primary">Show answer</button>
         <div id="answer" style="display: none;">

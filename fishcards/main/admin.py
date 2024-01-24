@@ -13,7 +13,7 @@ class FishCardInline(admin.TabularInline):
 
 @admin.register(FishCardSet)
 class FishCardSetAdmin(admin.ModelAdmin):
-    inlines = [FishCardInline]
+    # inlines = [FishCardInline]
     search_fields = ["name"]
     list_display = ("name", "description", "created_at", "updated_at")
     list_filter = ["created_at", "updated_at"]

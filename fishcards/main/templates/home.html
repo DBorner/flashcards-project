@@ -3,7 +3,9 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
+<div class="row">
     {% for fishcard, num_of_cards in fish_card_sets.items %}
+    <div class="col mb-4">
     <div class="card" style="width: 18rem;">
         <img src="media/{{ MEDIA_URL }}/{{fishcard.image}}" class="card-img-top" alt="card-img">
         <div class="card-body">
@@ -14,5 +16,7 @@
           {% endif %}
         </div>
       </div>
+    </div>
     {% endfor %}
+</div>
 {% endblock %}

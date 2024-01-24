@@ -23,7 +23,7 @@
                 {% for try in user_tries %}
                   <tr>
                     <th scope="row">{{ forloop.counter }}</th>
-                    <td>{{try.fishcardset.name}} ({{try.number_of_cards}})</td>
+                    <td>{{try.fishcardset.name}} ({{try.number_of_cards}} cards)</td>
                     <td>{{try.created_at}}</td>
                     <td>{% if try.is_finished %}
                         <span class="badge text-bg-success">Finished</span>

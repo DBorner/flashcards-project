@@ -67,7 +67,6 @@ class TryCardView(LoginRequiredMixin, TemplateView):
             "semi_correct_cards": semi_correct_cards,
             "wrong_cards": wrong_cards,
         }
-        print(context)
         return render(request, self.template_name, context)
 
     def post(self, request, try_card_id):

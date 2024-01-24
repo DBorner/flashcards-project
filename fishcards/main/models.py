@@ -25,7 +25,9 @@ class FishCard(models.Model):
     def __str__(self) -> str:
         if len(self.question) > 33:
             return self.question[3:33] + "..."
-        return self.question
+        if len(self.question) == 0:
+            return "No question"
+        return self.question[3:]
 
 
 class UserTry(models.Model):

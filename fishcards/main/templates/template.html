@@ -229,9 +229,6 @@
             href="/"
             class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
           >
-            <svg class="bi me-2" width="40" height="32">
-              <use xlink:href="#bootstrap" />
-            </svg>
             <span class="fs-4">Fishcard platform</span>
           </a>
 
@@ -260,8 +257,8 @@
         </header>
       </div>
 
-      <main>{% block content %} {% endblock %}</main>
-      <footer class="pt-5 my-5 text-body-secondary border-top">
+      <main class="col-lg-8 mx-auto p-4 py-md-5">{% block content %} {% endblock %}</main>
+      <footer class="pt-5 my-5 text-body-secondary border-top col-lg-8 mx-auto p-4 py-md-5">
         Created by Daniel Börner &middot; &copy; 2024
       </footer>
     </div>

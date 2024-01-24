@@ -39,6 +39,8 @@ def save_all_media_files_to_zip():
     dir = os.path.join(os.getcwd(), "fishcards", "media")
     if os.path.exists("card_sets/media"):
         shutil.make_archive("card_sets/media", "zip", dir)
+    else:
+        print(f"Media files not found! ({dir})")
 
 
 if __name__ == "__main__":

@@ -80,15 +80,12 @@ class TryCardView(LoginRequiredMixin, TemplateView):
             if answer == "correct":
                 try_card.status = UserTryCard.Status.CORRECT
                 try_card.save()
-                messages.success(request, "Correct")
             elif answer == "semi-correct":
                 try_card.status = UserTryCard.Status.SEMI_CORRECT
                 try_card.save()
-                messages.success(request, "Semi Correct")
             elif answer == "wrong":
                 try_card.status = UserTryCard.Status.WRONG
                 try_card.save()
-                messages.success(request, "Wrong")
         else:
             messages.error(request, "Something went wrong")
         if "user_try_cards" in request.session:

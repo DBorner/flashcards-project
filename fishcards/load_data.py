@@ -37,7 +37,7 @@ def scan_card_sets():
 
 def load_media_files_from_zip():
     dir = os.path.join(os.getcwd(), "card_sets")
-    server_dir = os.path.join(os.getcwd(), "fishcards", "media")
+    server_dir = os.path.join(os.getcwd(), "media")
     if os.path.exists("card_sets/media.zip"):
         shutil.unpack_archive("card_sets/media.zip", server_dir)
 

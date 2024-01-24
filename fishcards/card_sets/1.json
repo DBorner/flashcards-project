@@ -1,0 +1,671 @@
+{
+    "name": "IoT",
+    "description": "Fiszki na egzamin z IoT🙂\r\nAutor: Jakub Ner",
+    "image": "uploads/5_20240125001545.jpg",
+    "cards": [
+        {
+            "question": "<p>Czym jest internet Rzeczy?</p>",
+            "answer": "<p>Infrastruktura umożliwiająca łączenie rzeczy (obiektów fizycznych i wirtualnych) w oparciu o technologie informacyjne i komunikacyjne.</p>\n<!--SR:!2024-01-24,1,230-->"
+        },
+        {
+            "question": "<p>Czym jest urządzenie?</p>",
+            "answer": "<p>Sprzęt z obowiązkową możliwością komunikacji i opcjonalnymi czujnikami, elementami wykonawczymi, analizowaniem danych</p>\n<!--SR:!2024-01-24,1,230-->"
+        },
+        {
+            "question": "<p>Wymień rodzaje sieci wchodzące w skład IoT.</p>",
+            "answer": "<ul>\n<li>Sieci o zasięgu lokalnym:<ul>\n<li><strong>BAN</strong> - Body Area Network</li>\n<li><strong>CAN</strong> - Car Area Network</li>\n<li><strong>PAN</strong> - Personal Area Network</li>\n</ul>\n</li>\n<li>Sieci dalekiego zasięgu:<ul>\n<li><strong>CAN</strong> - Campus Area Network</li>\n<li><strong>HAN</strong> - Home Area Network</li>\n<li><strong>LAN</strong> - Local Area Network</li>\n<li><strong>MAN</strong> - Metropolitan Area Network</li>\n<li><strong>WAN</strong> - Wide Area Network\n<em>UWAGA: Linia podziału nie jest sztywna</em></li>\n</ul>\n</li>\n</ul>\n<!--SR:!2024-01-24,1,230-->"
+        },
+        {
+            "question": "<p>Gdzie można zarządzać danymi?</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240106173823.png\">\n- Chmura (<strong>Cloud</strong>) - chmura lub centralne centrum danych,\n- Mgła (<strong>Fog</strong>) - bramy i sieć tranzytowa,\n- Krawędź (<strong>Edge</strong>) - w czujnikach.</p>\n<!--SR:!2024-01-24,1,230-->"
+        },
+        {
+            "question": "<p>Jakie urządzenia wyróżniamy w IoT?</p>",
+            "answer": "<ul>\n<li>Przetworniki</li>\n<li>Czujniki</li>\n<li>Elementy wykonawcze (Actuators) - wpływa na środowisko</li>\n<li>Moduł komunikacyjny</li>\n<li>mikrokontroler</li>\n<li>źródło zasilania</li>\n</ul>\n<!--SR:!2024-01-24,1,230-->"
+        },
+        {
+            "question": "<p>Rozwiń skrót ADC.</p>",
+            "answer": "<p>Analog-Digital-Converter</p>\n<!--SR:!2024-01-24,1,230-->"
+        },
+        {
+            "question": "<p>Wymień podstawowe parametry ADC:</p>",
+            "answer": "<ul>\n<li>Resolution - liczba bitów</li>\n<li>Precision - stabilność pomiarów</li>\n<li>$V_{REF}$ (napięcie odniesienia - maksymalne) - wewnętrzne / zewnętrzne</li>\n<li>Input scaling - zakres napięcia, jedno-, dwubiegunowość,</li>\n<li>Prędkość - czas konwersji, opóźnienie</li>\n</ul>\n<!--SR:!2024-01-24,1,230-->"
+        },
+        {
+            "question": "<p>Wymień podstawowe parametry DAC:</p>",
+            "answer": "<ul>\n<li>Rozdzielczość (Resolution) - liczba bitów.</li>\n<li>Precyzja (Accuracy) - monotoniczność, liniowość, stabilność stałoprądowa.</li>\n<li>Napięcie odniesienia (Reference voltage - VREF) - wewnętrzne lub zewnętrzne.</li>\n<li>Skalowanie wyjścia (Output scaling) - jednobiegunowość lub dwubiegunowość, zakres napięcia.</li>\n<li>Typ wyjścia (Output type) - wyjście napięciowe lub wyjście prądowe.</li>\n<li>Prędkość (SPeed) - czas ustawiania (wyjścia), częstotliwość aktualizacji (wyjścia).</li>\n</ul>\n<!--SR:!2024-01-24,1,230-->"
+        },
+        {
+            "question": "<p>Jak przebiega input scaling dla jedno-wejściowego ADC?</p>",
+            "answer": "<p>Liniowo między GND i $V_{REF}$ w $2^n$ krokach. $Min=0$, $Max=2^n -1$</p>\n<!--SR:!2024-01-24,1,230-->"
+        },
+        {
+            "question": "<p>Jeżeli wartość błędu pomiaru ADC wynosi 1 <strong>LSB</strong>, oznacza to, że:</p>",
+            "answer": "<p>Błąd wynosi $\\frac{V_{REF}}{2^n}$</p>"
+        },
+        {
+            "question": "<p>Co jeśli mierzone napięcie jest wyższe od napięcia referencyjnego, to:</p>",
+            "answer": "<p>Zawsze odczytamy maksymalną wartość, którą może podać przetwornik (wartość napięcia zasilania przetwornika musi być większa od referencyjnego)</p>"
+        },
+        {
+            "question": "<p>Zbyt duża różnica między napięciem referencyjnym a mierzonym może spowodować:</p>",
+            "answer": "<p>Ograniczenie dostępnej rozdzielczości.</p>"
+        },
+        {
+            "question": "<p>Wymień źródła pomiaru czujnika.</p>",
+            "answer": "<ul>\n<li>sygnał cyfrowy, jeśli czujnik jest wyposażony w ADC</li>\n<li>sygnał analogowy, zwykle w postaci napięcia lub prądu odpowiadającego zmierzonej wartości.</li>\n</ul>"
+        },
+        {
+            "question": "<p>Czym jest system wbudowany (Embedded)?</p>",
+            "answer": "<p>Połączenie sprzętu i oprogramowania (w tym systemu operacyjnego)</p>"
+        },
+        {
+            "question": "<p>Co zawiera w sobie MCU (microcontroller unit)?</p>",
+            "answer": "<ul>\n<li>przynajmniej jeden rdzeń procesora</li>\n<li>pamięć</li>\n<li>programowalne urządzenia I/O</li>\n</ul>"
+        },
+        {
+            "question": "<p>Jakie wyróżniamy architektury mikrokontrolerów?</p>",
+            "answer": "<ul>\n<li><strong>Harvardzka</strong> - osobna pamięć i magistrale dla programu i danych</li>\n<li><strong>von Neumanna</strong> - wspólna przestrzeń, jest popularniejsza</li>\n</ul>"
+        },
+        {
+            "question": "<p>Rozwiń skrót DSP.</p>",
+            "answer": "<p>Digital signal processing</p>"
+        },
+        {
+            "question": "<p><span style=\"color:#ff0000\">Czym są endianness?</span>\n<em>Na przykładzie liczby szesnastkowej: 4F 52</em></p>",
+            "answer": "<p>Dotyczą one kolejności liczb wielobajtowych w pamięci. Wyróżniamy:\n- <strong>big-endian</strong> - najbardziej znaczący bajt (MSB) znajduje się pod najniższym adresem, czyli 4F jest przechowywany w pamięci o indeksie $i$, a 52 na $i+1$\n- <strong>little-endian</strong> - najmniej znaczący bajt (LSB)  znajduje się pod najniższym adresem, czyli 4F przechowany w pamięci o indeksie $i+1$, a 52 na $i$</p>"
+        },
+        {
+            "question": "<p>Wymień możliwe w C operacje bitowe.</p>",
+            "answer": "<ul>\n<li><code>~</code> - operator negacji bitowej, </li>\n<li><code>&amp;</code> - operator koniunkcji bitowej AND,</li>\n<li><code>|</code> - operator alternatywy bitowej OR, </li>\n<li><code>^</code> - operator alternatywy rozłącznej XOR, </li>\n<li><code>&lt;&lt;</code> - operatory przesunięcia bitowego w lewo, </li>\n<li><code>&gt;&gt;</code> - operatory przesunięcia bitowego w prawo,</li>\n</ul>"
+        },
+        {
+            "question": "<p>Zakładając pozycje cyfr binarnych w bajcie: [7, 6, 5, 4, 3, 2, 1, 0].\nJak ustawić bit na pozycji 5 na wartość 1?</p>",
+            "answer": "<p><code>cpp\nx |= 32;               // not informative - do not use\nx |= 0x20;             // not convenient\nx |= 0b00100000;       // not always implemented\nx |= (1 &lt;&lt; 5);         // use this</code></p>"
+        },
+        {
+            "question": "<p>Zakładając pozycje cyfr binarnych w bajcie: [7, 6, 5, 4, 3, 2, 1, 0].\nJak wyczyścić bit na pozycji 5 do wartości 0?</p>",
+            "answer": "<p><code>cpp\nx &amp;= 223;              // not informative - do not use\nx &amp;= 0xdf;             // not convenient\nx &amp;= 0b11011111;       // not always implemented\nx &amp;= ~(1 &lt;&lt; 5);        // use this</code></p>"
+        },
+        {
+            "question": "<p>Do czego służy <code>volatile</code>?</p>",
+            "answer": "<p>Zapewnia, że odczyt danych nie będzie optymalizowany, a wartość zmiennej będzie zawsze odczytywana z adresu pamięci zmiennej lub z rejestru.</p>"
+        },
+        {
+            "question": "<p>Czym jest <strong>ISP</strong> (In-System-Programming)?</p>",
+            "answer": "<p>Programowanie urządzenia w ramach instalacji całego systemu, a nie osobno każdego komponentu mikrokontrolera.</p>"
+        },
+        {
+            "question": "<p>Co umożliwia <strong>JTAG</strong> (Joint Test Action Group)?</p>",
+            "answer": "<p>Programowanie wielu urządzeń\n<img src=\"/media/uploads/ner/20231223185029.png\"></p>"
+        },
+        {
+            "question": "<p>Inne interface'y: PDI, TPI, UPDI.</p>",
+            "answer": "<p>Nwm czy jest sens</p>"
+        },
+        {
+            "question": "<p>Rozwiń skrót <strong>ALU</strong>.</p>",
+            "answer": "<p>Jednostka Arytmetyczna Logiczna</p>"
+        },
+        {
+            "question": "<p>Czym jest pamięć <strong>Flash</strong>?</p>",
+            "answer": "<ul>\n<li>Nieulotna,</li>\n<li>programowalna, reprogramowalna i elektrycznie czyszczona, może zawierać Boot Loader i sekcję programu. Nie da się wyczyścić mniej niż określony blok (kilka) bajtów</li>\n</ul>"
+        },
+        {
+            "question": "<p>Czym jest <strong>SRAM</strong>?</p>",
+            "answer": "<p>Static Random-Access Memory, pamięć ulotna</p>"
+        },
+        {
+            "question": "<p>Czym jest <strong>EEPROM</strong>?\n<img src=\"/media/uploads/ner/20240111224938.png\"></p>",
+            "answer": "<p>Electrically Erasable Programmable Read-Only Memory. Podobny do pamięci Flash ale można w nim czyścić pojedynczy bajt. Wolniejszy ale prostszy w użyciu</p>"
+        },
+        {
+            "question": "<p>Do czego służą <strong>Fusebity</strong>?</p>",
+            "answer": "<p>Pozwalają skonfigurować wybrane funkcje (np watchdog'a) lub parametry pracy mikrokontrolera jeszcze przed uruchomieniem programu z jego pamięci. Trzymane są w pamięci EEPROM.</p>"
+        },
+        {
+            "question": "<p>Do czego służą <strong>Lockbity</strong>?</p>",
+            "answer": "<p>Pozwalają kontrolować dostęp do obszarów pamięci mikrokontrolera i chronią przed nieautoryzowanym odczytem za pomocą programatora.</p>"
+        },
+        {
+            "question": "<p>Jakiego mikrokontrolera używaliśmy na labach?</p>",
+            "answer": "<p>ATmega328, Arduino Uno</p>"
+        },
+        {
+            "question": "<p>Wymień źródła sygnału zegara.</p>",
+            "answer": "<ul>\n<li>wewnętrzny oscylator RC (rezystancyjno-pojemnościowy)<ul>\n<li>średnia częstotliwość</li>\n<li>bardzo niska precyzja</li>\n<li>często skonfigurowany jako domyślny</li>\n</ul>\n</li>\n<li>oscylator kwarcowy:<ul>\n<li>najwyższa częstotliwość</li>\n<li>najwyższa precyzja</li>\n</ul>\n</li>\n<li>kwarcowy oscylator niskiej częstotliwości</li>\n<li>zewnętrzny sygnał zegara, np z innego mikrokontrolera</li>\n</ul>"
+        },
+        {
+            "question": "<p>Do czego wykorzystuje się <strong>preskaler</strong>?</p>",
+            "answer": "<p>Do zmniejszenia podstawowej częstotliwości zegara, np w celu zmniejszenia zużycia energii</p>"
+        },
+        {
+            "question": "<p>Wymień tryby uśpienia ATmega328.</p>",
+            "answer": "<ul>\n<li><strong>Idle</strong> - wyłączenie zegarów dla CPU, RAM, Flash; mikrokontroler budzi się z przerwaniem zewnętrznym lub wewnętrznym (generowanym przez timery, moduły komunikacyjne itp.)</li>\n<li><strong>ADC Noise Reduction</strong> - wyłącznie zegarów dla CPU, RAM, Flash, modułów komunikacyjnych na czas zbierania pomiaru ADC</li>\n<li><strong>Power-Down</strong> - wszystkie generowane sygnały zegarowe są wyłączone; wybudzić mogą przerwania zewnętrzne, reset z systemów watchdog i brown-out, przerwanie sygnalizujące zmianę na pinie</li>\n<li><strong>Power-Save</strong> - jak Power-Down ale z działającym timerem/licznikiem. Wybudzany przez wybrane zdarzenia timer'a</li>\n<li><strong>Standby</strong> - jak Power-Down ale z działającym oscylatorem</li>\n<li><strong>Extended Standby</strong> - jak Power-Save ale z działającym oscylatorem</li>\n</ul>"
+        },
+        {
+            "question": "<p>Czym jest reset?</p>",
+            "answer": "<p>Ustawienie początkowych wartości rejestrów I/O. Nie wymaga zegara.</p>"
+        },
+        {
+            "question": "<p>Jakie są źródła resetu?</p>",
+            "answer": "<ul>\n<li><strong>Power-on Reset</strong>:<ul>\n<li>po włączeniu zasilania</li>\n<li>po spadnięciu poniżej poziomu detekcji</li>\n</ul>\n</li>\n<li><strong>Brown-out Reset</strong>:<ul>\n<li>gdy niespełniona jest histereza np. $V_{BOT-}$ &lt; $V_{BOT+}$, która eliminuje migotanie sygnału resetowania</li>\n<li>konfigurowane przez fusebity</li>\n<li>może zostać wyłączony poprzez ustawienie fusebit RSTDISBL.</li>\n</ul>\n</li>\n<li><strong>External Reset</strong>: <ul>\n<li>po przytrzymaniu niskiego poziomu na pinie $\\overline{RESET}$</li>\n</ul>\n</li>\n<li><strong>Watchdog System Reset</strong>:<ul>\n<li>po wykryciu blokady (nikt nie kopnął psa od zbyt dawna)</li>\n<li>włączany i ustawiany za pomocą fusebitów</li>\n<li>szczególnie zalecany, gdy urządzenie działa przez dłuższy czas bez nadzoru</li>\n<li>działa również we wszystkich trybach uśpienia</li>\n</ul>\n</li>\n</ul>"
+        },
+        {
+            "question": "<p>Czym jest oznaczenie $V_{cc}$?</p>",
+            "answer": "<p>System wykrywania napięcia zasilania.</p>"
+        },
+        {
+            "question": "<p>Jak zbyt niskie napięcie może wpłynąć na zapis do EEPROM i co może być rozwiązaniem problemu?</p>",
+            "answer": "<p>Zbyt niskie napięcie może powodować problemy z zapisem i uszkodzić zawartość pamięci. Prawidłowo skonfigurowany BOD (Brown-Out-Detection) eliminuje ten problem.</p>"
+        },
+        {
+            "question": "<p>Czym jest przerwanie?</p>",
+            "answer": "<p>Zasygnalizowana zmiana lub osiągnięcie stanu opisanego przez warunek (np. zmiana stanu na pinie) przerwania. Cechują się priorytetami. Na ich podstawie kontroler CPUINT decyduje, które przerwanie należy obsłużyć, a które musi poczekać. CPUINT ustawia licznik programu, tak aby wskazywał skok do procedury obsługi przerwania (tzw. wektor przerwania). Po zakończeniu procedury, wykonanie programu wznawiane jest od miejsca gdzie zostało przerwane.</p>"
+        },
+        {
+            "question": "<p>Czym jest system zdarzeń (<strong>EVSYS</strong>) i do czego służy?\n<img src=\"/media/uploads/ner/20240111224741.png\"></p>",
+            "answer": "<p>Pozwala podsystemom (urządzeniom peryferyjnym) lub programowi komunikować się bezpośrednio (z pominięciem CPU) poprzez konfigurowalną sieć routingu zdarzeń.</p>"
+        },
+        {
+            "question": "<p>Czym jest <strong>Timer</strong>?</p>",
+            "answer": "<p>Licznik zliczający od 0 wzwyż, do momentu \"przekręcenia\" się licznika. Zliczanie jest niezależne od uruchomionego programu. Szybkość zliczania określa się wybierając źródło sygnału taktującego. Oznaczany jako <strong>CNT</strong></p>"
+        },
+        {
+            "question": "<p>Do czego służy Pulse Width Modulation (<strong>PWM</strong>)?</p>",
+            "answer": "<p>Służy do regulacji urządzenia (np. jasność świecenia diody, prędkość obrotu silnika) poprzez modulację prądu lub napięcia (tzw. zmiana wypełnienia sygnału)\n<img src=\"/media/uploads/ner/20231229142738.png\"></p>"
+        },
+        {
+            "question": "<p>Czym charakteryzuje się modulacja PWM z <strong>wykorzystaniem jednego zbocza</strong>?</p>",
+            "answer": "<p>CMPn - Compare register\nW0n - Waveform\n<img src=\"/media/uploads/ner/20231229142425.png\"></p>"
+        },
+        {
+            "question": "<p>Czym charakteryzuje się PWM w trybie pojedynczego narastania?</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20231229142532.png\"></p>"
+        },
+        {
+            "question": "<p>Jak działa <strong>RTC</strong> (Real Time Counter)?</p>",
+            "answer": "<p>RTC zlicza cykle zegarowe w <strong>CNT</strong> (counter register) i porównuje to z period register i <strong>CMP</strong> (compare register). Może generować przerwania i zdarzenia przy porównywaniu lub przepełnieniu. Zazwyczaj działa ciągle - może wybudzać urządzenie</p>"
+        },
+        {
+            "question": "<p>Do czego służy komparator?</p>",
+            "answer": "<p>Do porównania dwóch sygnałów analogowych (napięć)\n<img src=\"/media/uploads/ner/20231229144127.png\"></p>"
+        },
+        {
+            "question": "<p>Wymień parametry odchyleń pomiarów - rodzaje błędów:</p>",
+            "answer": "<ul>\n<li>Błąd przesunięcia (Oﬀset Error),</li>\n<li>Błąd wzmocnienia (Gain Error),</li>\n<li>Nieliniowość skumulowana (Integral Non-Linearity (INL)),</li>\n<li>Nieliniowość różnicowa (Diﬀerential Non-Linearity (DNL)),</li>\n<li>Błąd kwantyzacji (Quantization Error),</li>\n<li>Dokładność bezwzględna (Absolute Accuracy).</li>\n</ul>"
+        },
+        {
+            "question": "<p>Jak wygląda błąd przesunięcia?</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20231229160515.png\"></p>"
+        },
+        {
+            "question": "<p>Jak wygląda błąd wzmocnienia?</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20231229160656.png\"></p>"
+        },
+        {
+            "question": "<p>Jak wygląda Nieliniowość skumulowana?</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20231229160636.png\"></p>"
+        },
+        {
+            "question": "<p>Jak wygląda błąd Nieliniowość różnicowa?</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20231229160722.png\"></p>"
+        },
+        {
+            "question": "<p>Na czym polega błąd Błąd kwantyzacji?</p>",
+            "answer": "<p>Każdy pomiar ADC jest obarczony błędem ±0.5 LSB</p>"
+        },
+        {
+            "question": "<p>Czym jest Dokładność bezwzględna?</p>",
+            "answer": "<p>Jest to maksymalne odchylenie od rzeczywistego pomiaru. Idealna wartość to ±0.5 LSB</p>"
+        },
+        {
+            "question": "<p>Rozwiń skrót <strong>AVR</strong>.</p>",
+            "answer": "<p>Automatic Voltage Regulator - utrzymuje wartości na stałym poziomie dla konkretnych wartości prądu</p>"
+        },
+        {
+            "question": "<p>Jaka jest zależność między napięciem a temperaturą?</p>",
+            "answer": "<p>liniowa.</p>"
+        },
+        {
+            "question": "<p>Do czego służy <strong>CRC</strong> (Cyclic Redundancy Check)?</p>",
+            "answer": "<p>Do weryfikacji danych w nieulotnej pamięci mikrokontrolera. Jeśli suma kontrolna obliczona przez CRCSCAN z CRC się nie zgadzają może zostać wygenerowane przerwanie.</p>"
+        },
+        {
+            "question": "<p>Dodatkowe elementy mikrokontrolera:</p>",
+            "answer": "<ul>\n<li><strong>RNG</strong> (Random Number Generator)</li>\n<li>akcelerator sprzętowy AES</li>\n</ul>"
+        },
+        {
+            "question": "<p>Co jest rolą przełącznika?</p>",
+            "answer": "<p>Zamykanie / otwieranie obwodu.</p>"
+        },
+        {
+            "question": "<p>Jakie są rodzaje przełączników?</p>",
+            "answer": "<ul>\n<li>single-pole single-throw</li>\n<li>single-pole double-throw</li>\n<li>double-pole double-throw</li>\n<li>normally open</li>\n<li>normally close\n  <img src=\"/media/uploads/ner/20231229163820.png\"> <img src=\"/media/uploads/ner/20231229165423.png\"></li>\n</ul>"
+        },
+        {
+            "question": "<p>Czym jest potencjometr?</p>",
+            "answer": "<p>Trójwyprowadzeniowym rezystorem - dzielnikiem napięcia. Położenie trzeciej elektrody reguluje się przez obrót osi lub przesunięcie suwaka. Dostarcza sygnału analogowego\n<img src=\"/media/uploads/ner/20231229170404.png\"></p>"
+        },
+        {
+            "question": "<p>Jaka jest przewaga enkodera nad potencjometrem?</p>",
+            "answer": "<p>Enkoder dostarcza sygnału, który może być traktowany jako cyfrowy, dzięki temu nie wymaga przetwornika ADC. Jednak programista musi obsłużyć zdarzenia związane ze zmianą stanów wyjść enkodera.\n<img src=\"/media/uploads/ner/20231229171020.png\">\n<em>Enkoder Kwadraturowy</em></p>"
+        },
+        {
+            "question": "<p>Czym jest buzzer?</p>",
+            "answer": "<p>Płytka piezoelektryczna (buzzer pasywny) z ewentualną obudową i elektroniką do jego obsługi (aktywny)</p>"
+        },
+        {
+            "question": "<p>Czym jest LED?</p>",
+            "answer": "<p>To dioda elektroluminescencyjna, półprzewodnik, który emituje światło, gdy przepływa przez nie prąd (~1.5V - kolor czerwony, ~3.5V niebieski lub biały)</p>"
+        },
+        {
+            "question": "<p>Porównaj diodę matową i przeźroczystą.</p>",
+            "answer": "<p>W matowej światło jest rozproszone - jednakowo świeci pod różnymi kątami widzenia, ale za cenę jasności.\n![[Pasted image 20231229175917.png|200]]</p>"
+        },
+        {
+            "question": "<p>Jak zamontować diodę LED do mikrokontrolera?</p>",
+            "answer": "<p>Nie można podłączyć bezpośrednio. Mogłoby to spowodować uszkodzenie urządzenia, przez nadmierny prąd płynący przez diodę. Należy użyć odpowiednio dobranego rezystora. W przypadku diod LED dużej mocy powinny być montowane na radiatorze - zapewni on rozpraszanie ciepła.</p>"
+        },
+        {
+            "question": "<p>Czym jest współczynnik wypełnienia przebiegu elektrycznego?</p>",
+            "answer": "<p>Pozwala regulować średnie natężenie prądu. Jest to cykl PWM.</p>"
+        },
+        {
+            "question": "<p>Opisz zasadę działania wyświetlacza LCD.</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20231230123015.png\"></p>"
+        },
+        {
+            "question": "<p>Czym jest przetwornik?</p>",
+            "answer": "<p>Urządzenie przetwarzające energię (elektryczną lub nie) w inną (elektryczną lub nie)</p>"
+        },
+        {
+            "question": "<p>Jak dzielimy czujniki (taksonomia)?</p>",
+            "answer": "<ul>\n<li>aktywne / pasywne - Czy emitują energię i wymagają zewnętrznego źródła?</li>\n<li>inwazyjne / nieinwazyjne - Czy jest częścią środowiska, które mierzy? Jeśli tak, to inwazyjny</li>\n<li>kontaktowe / niekontaktowe - Czy wymagają kontaktu fizycznego?</li>\n<li>bezwzględne / względne - Czy mierzą w skali absolutnej?</li>\n<li>obszar zastosowań - Gdzie są używane?</li>\n<li>mechanizm pomiaru, np termoelektryczny, elektromechaniczny</li>\n<li>mierzone zmienne</li>\n</ul>"
+        },
+        {
+            "question": "<p>Wymień rodzaje czujników temperatury.</p>",
+            "answer": "<ul>\n<li>oporowe czujniki temperatury,</li>\n<li>termistory NTC i PTC,</li>\n<li>termopary,</li>\n<li>termostaty,</li>\n<li>czujniki w postaci układów scalonych z wyjściem analogowym i cyfrowym,</li>\n</ul>"
+        },
+        {
+            "question": "<p>Podaj przykłady elementów sygnalizacyjnych.</p>",
+            "answer": "<ul>\n<li>dźwiękowe:<ul>\n<li>syrena</li>\n<li>buczek</li>\n<li>dzwonek</li>\n</ul>\n</li>\n<li>świetlne:<ul>\n<li>lampa sygnalizacyjna</li>\n<li>wieża świetlna</li>\n</ul>\n</li>\n</ul>"
+        },
+        {
+            "question": "<p>Do czego służą elementy załączające (element wykonawczy)?</p>",
+            "answer": "<p>Umożliwiają mikrokontrolerom sterowanie urządzeniami pobierającymi większą moc od nich samych.</p>"
+        },
+        {
+            "question": "<p>Do czego służy tranzystor?</p>",
+            "answer": "<p>Do wzmacniania i przełączania sygnałów elektronicznych i energii elektrycznej\n![[Pasted image 20240102143312.png|400]]</p>"
+        },
+        {
+            "question": "<p>Do czego służy tyrystor?</p>",
+            "answer": "<p>Do kontroli przepływu prądu. Jako przełącznik - małym prądem może kontrolować znacznie większe napięcie i prąd\n![[Pasted image 20240102143653.png|400]]</p>"
+        },
+        {
+            "question": "<p>Jak działa podstawowy silnik elektryczny?</p>",
+            "answer": "<p>pole magnetyczne silnika wchodzi w interakcję z prądem elektrycznym, generując siłę w postaci momentu obrotowego przykładanego na wał silnika</p>"
+        },
+        {
+            "question": "<p>Jak mogą być zasilane silniki?</p>",
+            "answer": "<ul>\n<li>prądem stałym (AC):<ul>\n<li>akumulatory</li>\n<li>prostowniki</li>\n<li>pojazdy silnikowe</li>\n</ul>\n</li>\n<li>prądem przemiennym (AC):<ul>\n<li>sieć energetyczna</li>\n<li>falowniki</li>\n<li>generatory elektryczne\n<img src=\"/media/uploads/ner/20240102145244.png\"></li>\n</ul>\n</li>\n</ul>"
+        },
+        {
+            "question": "<p>Jaka właściwość silnika krokowego powoduje, że jest wykorzystywany tam gdzie wymagana jest precyzja (np druk 3d)?</p>",
+            "answer": "<p>Silnik krokowy dzieli pełny obrót na kilka kroków. Pozwala to wymusić i przytrzymać pozycję silnika bez czujników położenia i sprzężenia zwrotnego\n<img src=\"/media/uploads/ner/20240102150234.png\"></p>"
+        },
+        {
+            "question": "<p>Czym jest Serwomechanizm?</p>",
+            "answer": "<p>Mały, tani siłownik używany do sterowania radiowego i robotyki na małą skalę\n<img src=\"/media/uploads/ner/20240102150643.png\"></p>"
+        },
+        {
+            "question": "<p>Czym jest <strong>GPIO</strong> (General Purpose Input Output)?</p>",
+            "answer": "<p>Pin, którego zachowanie jest kontrolowane przez użytkownika w czasie wykonywania programu.</p>"
+        },
+        {
+            "question": "<p>W jaki sposób dane są przesyłane przez post szeregowy (<strong>Serial</strong>)?</p>",
+            "answer": "<p>Po jednym bicie na raz.</p>"
+        },
+        {
+            "question": "<p>Co jest charakterystyczne dla komunikacji szeregowej na poziomie TTL?</p>",
+            "answer": "<p>Napięcie jest między GND (0) a $V_{CC}$ (1), które wynosi zazwyczaj 5 V lub 3.3 V.</p>"
+        },
+        {
+            "question": "<p><span style=\"color:#ff0000\">Opisz istotniejsze linie elektryczne portu szeregowego (<strong>TxD</strong>, <strong>RxD</strong>, <strong>GND</strong>).</span></p>",
+            "answer": "<ul>\n<li><strong>TxD</strong> (Transmitted Data) - przenosi dane z <strong>DTE</strong> (Data Terminal Equipment) do <strong>DCE</strong> (Data Communication Equipment)</li>\n<li><strong>RxD</strong> (Received Data) - przenosi dane z <strong>DCE</strong> do <strong>DTE</strong></li>\n<li><strong>GND</strong> - Wspólna masa elektryczna</li>\n</ul>"
+        },
+        {
+            "question": "<p>Jakie wyróżniamy parametry portu szeregowego?</p>",
+            "answer": "<ul>\n<li><strong>prędkość</strong>:<ul>\n<li>prędkość portu i urządzenia muszą być zgodne</li>\n<li>niektóre systemy automatycznie wykrywają prędkość</li>\n</ul>\n</li>\n<li><strong>bity danych</strong> - endianness (LSB lub MSB) muszą być zgodne</li>\n<li><strong>parzystość</strong> - do wykrywania błędów transmisji, do znaku danych wysyłany jest dodatkowy bit, tak aby suma bitów była zawsze parzysta (<strong>E</strong>ven) lub nieparzysta (<strong>O</strong>dd)</li>\n<li><strong>bity stopu</strong> - do synchronizacji, na końcu znaku umieszczają\n<img src=\"/media/uploads/ner/20240104002532.png\"></li>\n</ul>"
+        },
+        {
+            "question": "<p>Czym jest magistrala <strong>UART</strong>?\n<img src=\"/media/uploads/ner/20240109112411.png\"></p>",
+            "answer": "<p>Universal Asynchronous Receiver-Transmitter - serial asynchroniczny, czyli taki, który nie musi współdzielić sygnału zegarowego do synchronizacji nadajnika i odbiornika. Synchronizacja polega na identyfikacji początku transmisji każdego bajtu w przewodzie. Gdy nie ma transmisji, magistrala jest w stanie bezczynności. Jest to przykład pełnego dupleksu.\n<img src=\"/media/uploads/ner/20240104143133.png\"></p>"
+        },
+        {
+            "question": "<p>Rozszyfruj poniższe ustawienia:\n1. 115200-8-N-1\n2. 38400-8-O-2</p>",
+            "answer": "<ol>\n<li>szybkość 115,2 Kb/s bez parzystości z jednym bitem stopu</li>\n<li>szybkość 38400 z ustawieniem parzystości na Odd (O) z dwoma bitami stopu</li>\n</ol>"
+        },
+        {
+            "question": "<p>Opisz magistralę SPI.\n![[Pasted image 20240109112618.png|400]]</p>",
+            "answer": "<p>Serial Peripheral Interface - serial w którym (master) współdzieli magistralę z niewolnikami. Wybiera do kogo będzie inicjował komunikację poprzez protokół Select-Slave (SS ![[Pasted image 20240104144447.png|28]]). Niewolnicy nie mogą wysyłać danych jeśli pan/i nie spyta. Jest to przykład pełnego dupleksu.</p>"
+        },
+        {
+            "question": "<p>Opisz rolę portów Serial Peripheral Interface (SPI):\n<img src=\"/media/uploads/ner/20240104144601.png\"></p>",
+            "answer": "<ul>\n<li>GPIO - inicjacja i kończenie komunikacji</li>\n<li>MOSI - Master Output Slave Input</li>\n<li>MISO - Master Input Slave Output</li>\n<li>CLK - sygnał zegarowy, może być podtrzymany przez wysyłanie fałszywych bajtów przez MOSI, które są ignorowane przez niewolnika</li>\n</ul>"
+        },
+        {
+            "question": "<p>Do czego służy magistrala Inter-Integrated Circut?\n<img src=\"/media/uploads/ner/20240104152124.png\"></p>",
+            "answer": "<p>Do połączenia wielu mikrokontrolerów i urządzeń podrzędnych na tej samej magistrali. Jest to magistrala półdupleksowa - dwa kierunki przepływu współdzielą ten sam sygnał, innymi słowy może być kilka urządzeń nadrzędnych (pań/panów).\n- <strong>SDA</strong> - Serial Data\n- <strong>SCL</strong> - Serial Clock</p>"
+        },
+        {
+            "question": "<p>Czym jest <strong>USB</strong>?</p>",
+            "answer": "<p>Universal Serial Bus - protokół działający w trybie host-device, z jednym kierunkiem komunikacji (host -&gt; device). Transceiver (odbiornik/nadajnik) może pracować w obu trybach - on-the-go (<strong>OTG</strong>).</p>"
+        },
+        {
+            "question": "<p>Co jest wyjątkowe w magistrali Dallas-Maxim 1 Wire?</p>",
+            "answer": "<p>Pozwala na komunikację (single-master, multi slave) ze zdalnym urządzeniem za pomocą tylko jednego przewodu! W praktyce wykorzystuje się dwa lub trzy xd\n<img src=\"/media/uploads/ner/20240104155959.png\"></p>"
+        },
+        {
+            "question": "<p>czym magistrala <strong>CAN</strong> (jest Controller Area Network)\n<img src=\"/media/uploads/ner/20240104160042.png\"></p>",
+            "answer": "<p>Półdupleksowa, multi-master, multi-slave, asynchroniczna szeregowa magistrala</p>"
+        },
+        {
+            "question": "<p>Wymień warstwy sieci (modele ISO/OSI i TCP/IP)</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240104162126.png\"></p>"
+        },
+        {
+            "question": "<p>Czym jest Sensor and Actuators Network (SANETs)?</p>",
+            "answer": "<p>Sieć czujników i urządzeń wykonawczych komunikujących się ze sobą, np inteligentne domy.\n- Zalety:\n    ▶ Łatwość wdrożenia\n    ▶ Skalowalne\n    ▶ Elastyczne projektowanie/dynamiczna topologia\n- Wady:\n    ▶ Ograniczone bezpieczeństwo\n    ▶ Ograniczone prędkości i zakresy transmisji\n    ▶ Środowisko ma wpływ</p>"
+        },
+        {
+            "question": "<p>Podaj wzór na długość fali.</p>",
+            "answer": "<p>$\\lambda = \\frac{v}{f}$\ngdzie:\n- $\\lambda$ - długość fali\n- $v$ - prędkość\n- $f$- częstotliwość</p>"
+        },
+        {
+            "question": "<p>Czym cechują się praca na wyższych częstotliwościach?</p>",
+            "answer": "<ul>\n<li>krótszymi falami</li>\n<li>większą ilością transmitowanych danych</li>\n<li>mniejszymi antenami</li>\n<li>krótszym zasięgiem działania (szczególnie w terenach zurbanizowanych)</li>\n</ul>"
+        },
+        {
+            "question": "<p>Czym się charakteryzują dłuższe fale elektromagnetyczne?</p>",
+            "answer": "<ul>\n<li>transmitują mniej danych</li>\n<li>lepiej penetrują ściany</li>\n<li>spory zasięg przy niewielkiej mocy nadajnika</li>\n</ul>"
+        },
+        {
+            "question": "<p>Wymień parametry komunikacyjne transmisji bezprzewodowej.</p>",
+            "answer": "<ul>\n<li>zasięg:<ul>\n<li>krótki (&lt; 100 m) np.:<ul>\n<li>IEEE 802.15.1 Bluetooth</li>\n<li>IEEE 802.15.7 Visible Light Communications (pilot do TV)</li>\n</ul>\n</li>\n<li>średni (&lt; 1 km):<ul>\n<li>IEEE 802.11 WiFi</li>\n<li>IEEE 802.15.4</li>\n<li>IEEE 802.15.4g WPAN</li>\n<li><em>technologie przewodowe takie jak Ethernet i Narowband Power Line Communications (PLC) też się klasyfikuje jako średniego zasięgu</em></li>\n</ul>\n</li>\n<li>daleki (1 km):<ul>\n<li>2G, 3G, 4G</li>\n<li>niektóre zastosowania WiFi oraz Low-Power Wide-Area</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>pasma częstotliwości:<ul>\n<li>regulowane przez International Telecommunication Union (ITU)</li>\n<li>nielicencjonowane</li>\n<li>licencjonowane</li>\n</ul>\n</li>\n<li>Rodzaj zasilania:<ul>\n<li>zasilane bezpośrednio</li>\n<li>zasilane bateryjnie (większa mobilność, ale problematyczna wymiana baterii lub jej niemożność)</li>\n</ul>\n</li>\n<li>topologia:<ul>\n<li>gwiazda (star), np telefon i słuchawki, głośnik</li>\n<li>peer-to-peer (P2P)- każdy z każdym (w określonym zasięgu) się komunikuje</li>\n<li>siatka (mesh) - specjalny rodzaj P2P</li>\n</ul>\n</li>\n<li>ograniczone węzły:<ul>\n<li>klasa 0:<ul>\n<li>prymitywne urządzenia, podobne do czujników (niezabezpieczone, przesyłają dane do proxy lub bram)</li>\n</ul>\n</li>\n<li>klasa 1:<ul>\n<li>dość ograniczone pamięciowo i obliczeniowo, ale są w stanie korzystać z prostych protokołów np CoAP, IP</li>\n</ul>\n</li>\n<li>Klasa 2:<ul>\n<li>ograniczone ale są w stanie obsługiwać większość serwerowych protokołów\n<img src=\"/media/uploads/ner/20240104230910.png\"></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+        },
+        {
+            "question": "<p>Opisz protokół IEEE 802.<strong>15.4.</strong></p>",
+            "answer": "<p>To technologia dostępu bezprzewodowego do urządzeń o niskiej przepustowości, zasilanych lub zasilanych bateryjnie. Dane są odbierane i przesyłane przez warstwę fizyczną MAC. Wykorzystuje AES.\nPrzykłady użycia:\n- automatyka domowa i budowlana\n- sieci w przemyśle samochodowym\n- zabawki interaktywne i zdalnie sterowane</p>"
+        },
+        {
+            "question": "<p>Wymień stosy protokołów bazujące na 802.<strong>15.4</strong>.</p>",
+            "answer": "<ul>\n<li>ZigBee</li>\n<li>6LoWPAN</li>\n<li>WirelessHart\n<img src=\"/media/uploads/ner/20240112142245.png\"></li>\n</ul>"
+        },
+        {
+            "question": "<p>Opisz IEEE 1901.2a.</p>",
+            "answer": "<p>Jest to technologia przewodowa wąskopasmowa w linii zasilającej NB-PLC (Narrowband Power Line Communication). Ma duży zasięg i odporność na zakłócenia na tych samych przewodach, które przewodzą energię elektryczną.\nPrzykłady użycia:\n- automatyzacja dystrybucji\n- oświetlenie publiczne\n- stacje ładowania pojazdów elektrycznych\n- energia odnawialna</p>"
+        },
+        {
+            "question": "<p>Opisz IEEE 802.<strong>11ah</strong>.\n<img src=\"/media/uploads/ner/20240112141600.png\"></p>",
+            "answer": "<p>Wykorzystywana w sieciach bez ograniczeń. Służy do podłączania punktów końcowych (np węzłów obliczeniowych (mgły)), czujników o dużej szybkości transmisji danych oraz urządzenia do analizy audio i wideo. Przykłady użycia:\n- czujniki i mierniki obejmujące inteligentną siatkę\n- agregacja przez sieć dosyłową (backhaul)\n- Wi-Fi o zwiększonym zasięgu</p>"
+        },
+        {
+            "question": "<p>Czy WiFi obsługuje pasma poniżej 1 GHz?</p>",
+            "answer": "<p>Nie</p>"
+        },
+        {
+            "question": "<p>Modulacja LoRa opiera się na modulacji rozproszonego widma. W wyniku tego prędkość transmisji jest niska. Gdzie tu korzyść?</p>",
+            "answer": "<p>Znaczne zwiększenie odległości komunikacji. Bo $\\lambda = \\frac{v}{f}$, a:\n<code>niższe częstotliwości</code> -&gt; <code>większe długości fal</code> -&gt; <code>większy zasięg</code>\nLoRaWAN osiąga częstotliwości sub-GHz (poniżej 1 GHz)</p>"
+        },
+        {
+            "question": "<p>Do czego służy algorytm <strong>ADR</strong> (Adaptive Data Rate)?</p>",
+            "answer": "<p>Do zarządzania szybkością transmisji danych i sygnału radiowego. Zapewnia, że wydajność sieci jest obtymalna.</p>"
+        },
+        {
+            "question": "<p>Opisz topologię LoRaWAN</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240105000801.png\"></p>"
+        },
+        {
+            "question": "<p>Wymień zalety protokołu IP (jest ich 8).\n<img src=\"/media/uploads/ner/20240111234301.png\"></p>",
+            "answer": "<ol>\n<li>Otwarty i oparty na standardach</li>\n<li>Wszechstronny</li>\n<li>Wszechobecny, bo <em>'Warstwowa architektura IP jest dobrze przygotowana, aby poradzić sobie z każdym rodzajem warstw ﬁzycznych i łącza danych'</em></li>\n<li>Skalowalny</li>\n<li>Zarządzalny i bezpieczny</li>\n<li>Stabilny i odporny, istnieje już 30 lat i jest zajebisty (również w sektorach finansowych i obronnych)</li>\n<li>Przyjęty na rynku konsumenckim</li>\n<li>Jest czynnikiem zwiększającym innowacyjność</li>\n</ol>"
+        },
+        {
+            "question": "<p>Czym są adaptacja 🤡 i adopcja 🐶 w kontekście IP?\n<img alt=\"\" src=\"https://www.youtube.com/watch?v=nvSKfN6_6eM\" /></p>",
+            "answer": "<ul>\n<li><strong>adaptacja</strong> - implementacja bramy warstwy aplikacji, aby zapewnić translację między warstwami innymi niż IP oraz IP</li>\n<li><strong>adopcja</strong> - zastąpienie wszystkich warstw innych niż IP ich odpowiednikami IP, upraszczając model wdrażania i operacje</li>\n</ul>"
+        },
+        {
+            "question": "<p>Kiedy adoptować a kiedy adaptować?</p>",
+            "answer": "<p>W przypadku bardzo ograniczonych zasobowo urządzeń adaptacja. W pozostałych adopcja.</p>"
+        },
+        {
+            "question": "<p>Jakie nowości wprowadza IPv6?\n<img src=\"/media/uploads/ner/20240112000938.png\"></p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240112003842.png\"></p>"
+        },
+        {
+            "question": "<p><img src=\"/media/uploads/ner/20240112130337.png\">\nJaki protokół opisuje w jaki sposób enkapsulowany jest IPv4 w ramce Ethernet? A jaki mówi o IPv6?\n- RFC 894\n- RFC 2464</p>",
+            "answer": "<ul>\n<li>RFC 894 - IPv4</li>\n<li>RFC 2464 - IPv6</li>\n</ul>"
+        },
+        {
+            "question": "<p>Czym jest 6LoWPAN?</p>",
+            "answer": "<p>Warstwa adaptacyjna zoptymalizowana pod kątem transmisji IPv6 stworzona dla ograniczonych węzłów.\n<img src=\"/media/uploads/ner/20240112130947.png\"></p>"
+        },
+        {
+            "question": "<p>Czym jest opcja ustalania osiągalności i przesyłania pakietów \"mesh-under\"?</p>",
+            "answer": "<p>W niej routing jest obsługiwany w warstwie adaptacyjnej 6LoWPAN</p>"
+        },
+        {
+            "question": "<p>Czym jest opcja ustalania osiągalności i przesyłania pakietów \"mesh-over\" (\"route-over\")?</p>",
+            "answer": "<p>W niej routing IP dostarcza pakiety do miejsca docelowego</p>"
+        },
+        {
+            "question": "<p>Jak działa IPv6 routing Protocol for Low Power and Lossy Network (<strong>RPL</strong>)?</p>",
+            "answer": "<p>Każdy węzeł działa jak router i staje się częścią sieci (mesh). Routing odbywa się w warstwie IP. Każdy węzeł sprawdza odebrany pakiet i określa miejsce docelowe następnego przeskoku. żadne informacje z warstwy MAC nie są potrzebne, dlatego nazwa mesh-over-routing.\nAby poradzić sobie z ograniczeniami pamięciowymi i obliczeniowymi stosowane są dwa tryby:\n- <strong>z przechowywaniem</strong> - wszystkie węzły zawierają pełną tablice routingu RPL, każdy wie, jak bezpośrednio dotrzeć do każdego węzła\n- <strong>bez przechowywania</strong> - tylko graniczne routery zawierają pełną tablicę routingu. Pozostałe posiadają tylko adresy rodziców</p>"
+        },
+        {
+            "question": "<p>Na czym polega acykliczność RPL?</p>",
+            "answer": "<p>RPL opiera się na skierowanym grafie acyklicznym zorientowanym na miejsce docelowe (DODAG) - z dowolnego wierzchołka nie można podążać wzdłuż łuków z powrotem do tego samego punktu. Dodatkowo miejsce docelowe występuje na routerze granicznym jako root DODAG .\n<img src=\"/media/uploads/ner/20240112132707.png\"></p>"
+        },
+        {
+            "question": "<p>Ilu rodziców ma węzeł w DODAG?</p>",
+            "answer": "<p>Trzech. Zapewniają oni ścieżkę do korzenia. Zazwyczaj jeden z rodziców jest preferowany.</p>"
+        },
+        {
+            "question": "<p>Jak są konfigurowane trasy w IPv6 routing Protocol for Low Power and Lossy Network (RPL)?\n<img src=\"/media/uploads/ner/20240112133500.png\"></p>",
+            "answer": "<p>Trasy w górę są wykrywane i konfigurowane za pomocą DAG Information Object (<strong>DIO</strong>). Mówią one węzłom, kto jest ich rodzicem i określają najlepszą ścieżkę do katalogu głównego DODAG. Węzły ustalają trasy w dół ogłaszając swoich rodziców za pomocą Destination Advertising Object (<strong>DAO</strong>) - komunikaty te informują rodziców o obecności dzieci\n<img src=\"/media/uploads/ner/20240112133636.png\"></p>"
+        },
+        {
+            "question": "<p>Jak działa funkcja celu (<strong>OF</strong>) RFC 6719 minimalnej oczekiwanej liczby transakcji (<strong>METX</strong>)?</p>",
+            "answer": "<p>Rodzice pakują wartość <strong>METX</strong> do DIO i dziecko wybiera minimalną wartość (najlepszego rodzica)</p>"
+        },
+        {
+            "question": "<p>Czym jest ranga w DODAG?\n<img src=\"/media/uploads/ner/20240112133636.png\"></p>",
+            "answer": "<p>Jest przybliżeniem tego jak blisko węzeł jest od roota i pomaga uniknąć problemu zliczania w nieskończoność. Węzły mogą:\n- zwiększyć swoją rangę tylko po otrzymaniu <strong>DIO</strong> z większym numerem wersji.\n- obniżyć rangę, o ile ustaliły tańszą trasę</p>"
+        },
+        {
+            "question": "<p>Jakie są dostępne metryki dla RPL (jest ich 8)?</p>",
+            "answer": "<ol>\n<li><strong>Expected Transmission Count (ETX)</strong>: Przypisuje wartość dyskretną liczbie transmisji, których wykonania oczekuje węzeł w celu dostarczenia pakietu.</li>\n<li><strong>Hop Count</strong>: Śledzi liczbę węzłów przechodzących w ścieżkę. Zazwyczaj ścieżka o niższej liczbie przeskoków jest bardziej preferowana od ścieżki o wyższej liczbie przeskoków.</li>\n<li>Latency: Różni się w zależności od oszczędzania energii. Preferowane są ścieżki o niższym opóźnieniu.</li>\n<li><strong>Link Quality Level</strong>: Mierzy niezawodność łącza, biorąc pod uwagę poziomy błędów pakietów spowodowane czynnikami takimi jak tłumienie sygnału i interferencje.</li>\n<li><strong>Link Color</strong>: Umożliwia ręczny wpływ przez administracyjne na routing poprzez ustawienie wartości, aby łącze było mniej lub bardziej pożądane. Wartości te można dostosować statycznie lub dynamicznie do określonych rodzajów ruchu.</li>\n<li><strong>Node State and Attribute</strong>: Identyﬁkuje węzły, które działają jako agregatory ruchu i węzły, na które wpływ mają duże obciążenia. Wysokie obciążenia mogą wskazywać na węzły, które miały wysoki stan obciążania procesora lub pamięci. Oczywiście węzły będące agregatorami są preferowane w porównaniu z węzłami mocno obciążonymi.</li>\n<li><strong>Node Energy</strong>: Pozwala unikać węzłów o niskiej mocy, więc można uniknąć węzła zasilanego bateryjnie, w którym brakuje energii, i żywotność tego węzła i sieci można wydłużyć.</li>\n<li><strong>Throughput</strong>: Podaje wielkość przepustowości łącza węzła. Często węzły oszczędzające energię wykorzystują mniejszą przepustowość. Ta metryka umożliwia ustalanie priorytetów ścieżek o wyższej przepustowości.</li>\n</ol>"
+        },
+        {
+            "question": "<p>Wymień podobieństwa między sensorem a elementem wykonawczym.</p>",
+            "answer": "<ul>\n<li>oba odbierają i wysyłają dane</li>\n<li>mają pewien stopień autonomii</li>\n<li>mogą przyjmować polecenia dot. aktualizacji firmware'u</li>\n</ul>"
+        },
+        {
+            "question": "<p>Czy sensory mogą się komunikować z serwerem?</p>",
+            "answer": "<p>Szyfrowana implementacja protokółu TCP/IP lub UDP jest ciężka (objętościowo i obliczeniowo). Dodatkowo byłoby to raczej bez sensu, głupie pytanie.\n<img src=\"/media/uploads/ner/20240105010104.png\"></p>"
+        },
+        {
+            "question": "<p>Porównaj TCP i UDP.</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240112003542.png\"></p>"
+        },
+        {
+            "question": "<p>| Transmission Control Protocol                                                                                     | User Datagram Protocol                                                                                                    |\n| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |\n| wymaga nawiązania i utrzymania sesji (analogiczne do rozmowy telefonicznej)                                       | nie ma gwarancji dostawy (wysłanie listu)                                                                                 |\n| dodaje 20 bajtów ramki                                                                                            | dodaje tylko 8 bajtów ramki                                                                                               |\n| sieci o niskiej mocy i stratne (Low-Power and Lossy-Network) mogą sobie nie radzić w przypadku dużej liczby sesji | większość protokołów aplikacji przemysłowych było wdrażane gdy łącza były zawodne, dlatego TCP/IP jest tam popularniejszy |\n|                                                                                                                   | transmisja mutlicast wykorzystuje UDP                                                                                                                           |\n`\nWymień metody transportu aplikacji IoT.</p>",
+            "answer": "<ul>\n<li><strong>UDP</strong></li>\n<li><strong>TCP/IP</strong></li>\n<li>Brak protokołu - transport przebiega na niższych warstwach</li>\n<li>Supervisory Control and Data Acquisition (<strong>SCADA</strong>) - najpopularniejszy protokół przemysłowy, bardzo stary, ale przystosowany do sieci IP</li>\n<li>Protokoły internetowe - Ethernet, WiFi, 4G/LTE</li>\n<li>Constrained Application Protocol (<strong>CoAP</strong>)</li>\n<li><strong>MQTT</strong></li>\n</ul>"
+        },
+        {
+            "question": "<p>Czy sensor może być serwerem?</p>",
+            "answer": "<p>Jeszcze jak, oczywiście w uproszczonej formie, bez HTTP</p>"
+        },
+        {
+            "question": "<p>Jakie protokoły znajdują w stosie pod CoAP i MQTT?</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240105012752.png\"></p>"
+        },
+        {
+            "question": "<p>Opisz <strong>CoAP</strong> (Constrained Application Protocol).</p>",
+            "answer": "<p>Umożliwia komunikacje punkt-punkt <em>(nie mylić z peer-to-peer)</em> za pośrednictwem UDP. Taki niskoenergetyczny i odporniejszy na straty HTTP - umożliwia przesyłanie dokumentów i jest kompatybilny z RESTful. Standardy dojrzewają.\n<img src=\"/media/uploads/ner/20240105014416.png\"></p>"
+        },
+        {
+            "question": "<p>Opisz Message Queueue Telemetry Transmission.</p>",
+            "answer": "<p>Jest to pewnego rodzaju kolejka* w której pośredniczy broker - do niego publisher wysyła nowe wiadomości, by ten przesłał je do subskrybentów.\nW tradycyjnej kolejce dodawane są nowe elementy, w MQTT dla danego tematu nowe elementy zastępują stare. Nowe tematy można tworzyć na bieżąco.\n<img src=\"/media/uploads/ner/20240105014557.png\"></p>"
+        },
+        {
+            "question": "<p>Tematy w MQTT są hierarchiczne. W jaki sposób?</p>",
+            "answer": "<p>Są podobne do systemu plików np <code>id-pojazdu/silnik/olej/temperatura\nSubskrybent może łatwo subskrybować temat z jego wszystkimi pod-tematami (używając</code>#<code>) lub użyć</code>+<code>, żeby subskrybować temat dla dla wszystkich pod-tematów np</code>id-pojazdu/+/olej/temperatura`</p>"
+        },
+        {
+            "question": "<p>Dla komunikacji MQTT można określić Quality of Services (<strong>QoS</strong>). Opisz je.</p>",
+            "answer": "<ul>\n<li>QoS-0 - niepotwierdzona transmisja</li>\n<li>QoS-1 - potwierdzona przez odbiorcę (domyślny tryb)</li>\n<li>QoS-2 - potwierdzona przez nadawcę i odbiorcę</li>\n</ul>"
+        },
+        {
+            "question": "<p>Do czego służy Last Will and Testament (<strong>LWT</strong>)\n<img src=\"/media/uploads/ner/20240106164738.png\"></p>",
+            "answer": "<p>Jest to komunikat o stanie i celu (w tym opublikowanych poleceniach i subskrypcjach) przechowywany przez brokera.\nPo utracie połączenia z publisherem, broker powiadamia wszystkich subskrybentów wysyłając LWT</p>"
+        },
+        {
+            "question": "<p>Wymień zalety i wady MQTT.</p>",
+            "answer": "<ul>\n<li>zalety:<ul>\n<li>dowolny typ danych</li>\n<li>niezawodność (QoS-1 i QoS-2)</li>\n<li>skalowalność - publisher nic nie wie o subskrybentach, zna tylko brokera</li>\n<li>niezależność czasowa (asynchroniczność) - publisher wysyła nie przejmując się subskrybentami, broker podmienia stare wiadomości na nowe, subskrybenci przeglądają nowe wiadomości, kiedy chcą</li>\n<li>bezpieczeństwo (o ile włączone TLS/SSL)</li>\n<li>dwukierunkowość - urządzenie może być zarówno publisherem jak i subskrybentem</li>\n<li>dojrzałość - pierwsza wersja wyszła w 1999</li>\n</ul>\n</li>\n<li>wady<ul>\n<li>protokół TCP</li>\n<li>obciążony broker</li>\n<li>broker jako bottleneck - bez niego nie ma komunikacji</li>\n<li>bezpieczeństwo - domyślnie TLS/SSL jest wyłączone</li>\n</ul>\n</li>\n</ul>"
+        },
+        {
+            "question": "<p>Podsumowanie CoAP vs MQTT.</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240106170045.png\"></p>"
+        },
+        {
+            "question": "<p>Opisz architekturę oneM2M (machine-to-machine).</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240106172529.png\"></p>"
+        },
+        {
+            "question": "<p>Sieć FAN?</p>",
+            "answer": "<p>Field Area Network</p>"
+        },
+        {
+            "question": "<p>Opisz warstwy ustandaryzowanej architektury IoT World Forum (IoTWF).\n<img src=\"/media/uploads/ner/20240106173010.png\"></p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240106173020.png\"></p>"
+        },
+        {
+            "question": "<p>Czym są Edge (mist), Fog, Cloud w kontekście przetwarzania danych?</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240106175615.png\"></p>"
+        },
+        {
+            "question": "<p>Czym są dane ustrukturyzowane?</p>",
+            "answer": "<p>Są to dane zgodne z określonym modelem (np bazodanowym lub formatem (temperatura, wilgotność, ciśnienie, itd.))</p>"
+        },
+        {
+            "question": "<p>Czym są dane nieustrukturyzowane?</p>",
+            "answer": "<p>Nie posiadające logicznego schematu: mowa, obrazy, wideo. Te dane stanowią ok 80% danych biznesowych. Wymagają bardziej wyrafinowanych narzędzi analizy (ML/DL/AI)</p>"
+        },
+        {
+            "question": "<p>Czym są dane w spoczynku a czym w ruchu?</p>",
+            "answer": "<ul>\n<li>W spoczynku  - dane zapisywane na dysku twardym, a jeśli są przetwarzane to mówimy o przetwarzaniu wsadowym</li>\n<li>w  ruchu - dane przechodzące do miejsca docelowego (np mail lub dane z czujników), a jeśli są przetwarzane - transmisja strumieniowa</li>\n</ul>"
+        },
+        {
+            "question": "<p>Istnieją 4 rodzaje wyników analizy danych. Opowiedz o nich.</p>",
+            "answer": "<ul>\n<li>opisowa - co się <em>w silniku</em>? - np termometr w samochodzie co sekundę podaje wartość</li>\n<li>diagnostyczna - Dlaczego <em>silnik się zepsuł</em>?</li>\n<li>predykcyjna - Jaka szansa ponownego wystąpienia?</li>\n<li>preskryptywna - Jak rozwiązać problem?</li>\n</ul>"
+        },
+        {
+            "question": "<p>Czym różni się supervised od unsupervised learning?\n<img src=\"/media/uploads/ner/20240108230646.png\"></p>",
+            "answer": "<ul>\n<li>supervised - jabłka i banany są oznaczone, model tylko musi zauważyć różnicę by być w stanie je rozróżnić i powiedzieć co jest czym</li>\n<li>unsupervised - model musi zauważyć, że są obiekty podobne i znacząco różne od siebie. Z tego można wywnioskować, że coś jest A a coś B</li>\n</ul>"
+        },
+        {
+            "question": "<p>Które warstwy IoT są zaangażowane w uczenie lokalne a które w uczenie zdalne?</p>",
+            "answer": "<ul>\n<li>lokalne - krawędź, brama (węzeł mgły)</li>\n<li>zdalne - chmura</li>\n</ul>"
+        },
+        {
+            "question": "<p>Jakie są 4 główne domeny ML (w IoT)?</p>",
+            "answer": "<p>▶ monitorowanie,\n▶ sterowanie zachowaniem,\n▶ optymalizacja operacji,\n▶ samoregulacja, samooptymalizacja</p>"
+        },
+        {
+            "question": "<p>Wymień 3 V Big Data.</p>",
+            "answer": "<ul>\n<li>Velocity - szybkość napływania / analizy danych</li>\n<li>Variety - różnorodność danych</li>\n<li>Volume - ilość danych</li>\n</ul>"
+        },
+        {
+            "question": "<p>Jakie bazy danych się wykorzystuje w IoT?</p>",
+            "answer": "<ul>\n<li>Massively Parallel Processing (<strong>MPP</strong>) - dane są przetwarzane równolegle w wielu procesorach i węzłach, ponadto często mają wbudowane funkcje analityczne.Jeden węzeł (tzw. główny) jest odpowiedzialny za koordynację przechowywania i przetwarzania danych. Dane są przechowywane w formacie ala SQL</li>\n<li>Not only SQL (<strong>NoSQL</strong>)- może przechowywać dane zarówno ustrukturyzowane (w postaci JSON'ów, bazy klucz-wartość, bazy grafowe (wskazanie relacji między danymi)) jak i nieustrukturyzowane</li>\n<li>Hadoop - framework zarządzania i analizy danych. Przykładowe projekty wchodzące w jego ekosystem:<ul>\n<li>KafKa - budowanie potoków danych i aplikacji do streamowania</li>\n<li>Spark - silnik obliczeniowy dla danych Hadoop</li>\n<li>Storm - rozproszony system obliczeniowy min. do nieograniczonych strumieni danych</li>\n<li>Flink - rozproszony silnik do obliczeń stanowych w nieograniczonych i ograniczonych strumieniach danych</li>\n</ul>\n</li>\n</ul>"
+        },
+        {
+            "question": "<p>Czym jest Lambda?\n<img src=\"/media/uploads/ner/20240110105606.png\"> <img src=\"/media/uploads/ner/20240110110126.png\"></p>",
+            "answer": "<p>Architektura umożliwiająca korzystanie z danych wsadowych (z dysku) i strumieniowych. Poza tym, że jest magazynem danych, jest też mediatorem między tymi danymi a odbiorami danych.</p>"
+        },
+        {
+            "question": "<p>Opisz Mirai (atak, nie postać z anime)\n<img src=\"/media/uploads/ner/20240109105913.png\"></p>",
+            "answer": "<p>DDOS wyprowadzony z botnetu (zainfekowanego sprzętu z Linuxem)\n1. Skanowanie: badanie losowych IPv4 w szczególnośći portów 23 i 2323 (telnet TCP). W przypadku sukcesu umieszczanie czarnej listy adresów IP, których należy unikać\n2. nawiązanie sesji Telnet z ofiarą: logowanie brute force\n3. infekcja:\n    1. identyfikacja systemu i instalacja malware'u\n    2. ubicie pozostałych portów 22 i 23\n    3. maskowanie 'niespodzianki'\n4. DDOS: powódź SYN, GRE IP, STOMP, DNS</p>"
+        },
+        {
+            "question": "<p>Opisz Stuxnet\n<img src=\"/media/uploads/ner/20240109111517.png\"></p>",
+            "answer": "<p>Robak do: niszczenia pomp i wirówek gazowych do wzbogacania uranu, a konkretniej programowalnych sterowników logicznych (<strong>PLC</strong>) Siemens S7-300 obracających się z częstotliwością 807 Hz i 1210 Hz opartych na SCADA\n1. infekcja: wgranie oprogramowania na pierwsze urządzenie przy pomocy USB i skradzionego i odpowiednio podpisanego certyfikatu sterownika Realtek (dzięki temu oprogramowanie antywirusowe nie było w stanie wykryć malware'u)\n2. atak i rozprzestrzenianie: skanowanie systemu Windows w poszukiwaniu oprogramowania sterującego PLC Siemens SCADA</p>"
+        },
+        {
+            "question": "<p>Opisz atak Chain Reaction\n<img src=\"/media/uploads/ner/20240109115249.png\"></p>",
+            "answer": "<p>Atak na sieci o topologi siatki (mesh) PAN, o ile do konfiguracji użyto protokół Zigbee (w tym protokole wiadomości nie są szyfrowane ani podpisywane, jedynie wymiana kluczy była szyfrowana, jednak klucz główny wyciekł). Ataki mogą być wykonane bez internetu\n1. Infekcja: Przerwanie szyfrowania i podpisywania, a następnie wprowadzenie \"łatki\" do pojedynczej żarówki.\n2. Rozprzestrzenianie: Zaatakowana żarówka przyłączy się do sieci na podstawie skradzionego klucza głównego i wykorzysta bezpieczeństwo zbliżeniowe. Po pomyślnym dołączeniu żarówki zaraża ona sąsiednie (w promieniu kilkuset metrów) żarówki</p>"
+        },
+        {
+            "question": "<p>Czym się różnią technologia informacyjna od operacyjnej?</p>",
+            "answer": "<ul>\n<li>dział IT:<ul>\n<li>odpowiada za infrastrukturę, m.in. połączenia z internetem wraz z powiązanymi systemami danych.</li>\n<li>Ponadto za informacyjne systemy firmy np e-maile.</li>\n<li>priorytetyzuje ochronę informacji</li>\n</ul>\n</li>\n<li>dział OT:<ul>\n<li>odpowiada za zarządzanie i stan funkcjonujących systemów, monitoruje i kontroluje urządzenia (np przemysłowe, czy systemy SCADA) i ich procesy</li>\n<li>priorytetyzuje ochronę pracowników i sprzętu\nKiedyś były rozdzielne, obecnie ta granica się zaciera, bo OT zaczyna przejmować protokoły sieciowe IT, a IT coraz częściej wspiera wymagania operacyjne stosowane przez OT</li>\n</ul>\n</li>\n</ul>"
+        },
+        {
+            "question": "<p>Wymień różnice między polityką bezpieczeństwa sieci IT oraz OT w kontekście:\n1. Głównego celu</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240111204717.png\"></p>"
+        },
+        {
+            "question": "<p>Wymień różnice między polityką bezpieczeństwa sieci IT oraz OT w kontekście:\n2. Priorytetów</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240111205000.png\">\n<img src=\"/media/uploads/ner/20240111204850.png\"></p>"
+        },
+        {
+            "question": "<p>Wymień różnice między polityką bezpieczeństwa sieci IT oraz OT w kontekście:\n3. Typu ruchu sieciowego</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240111205000.png\">\n<img src=\"/media/uploads/ner/20240111204858.png\"></p>"
+        },
+        {
+            "question": "<p>Wymień różnice między polityką bezpieczeństwa sieci IT oraz OT w kontekście:\n4. Kontroli dostępu</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240111205000.png\">\n<img src=\"/media/uploads/ner/20240111204910.png\"></p>"
+        },
+        {
+            "question": "<p>Wymień różnice między polityką bezpieczeństwa sieci IT oraz OT w kontekście:\n5. Implikacji uszkodzonego urządzenia</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240111205000.png\">\n<img src=\"/media/uploads/ner/20240111204918.png\"></p>"
+        },
+        {
+            "question": "<p>Wymień różnice między polityką bezpieczeństwa sieci IT oraz OT w kontekście:\n6. Ochrony przed zagrożeniami</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240111205000.png\">\n<img src=\"/media/uploads/ner/20240111204927.png\"></p>"
+        },
+        {
+            "question": "<p>Wymień różnice między polityką bezpieczeństwa sieci IT oraz OT w kontekście:\n7. Aktualizacjami\n<img src=\"/media/uploads/ner/20240111205000.png\"></p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240111204936.png\"></p>"
+        },
+        {
+            "question": "<p>Wymień różnice między polityką bezpieczeństwa sieci IT oraz OT w kontekście:\n1. Głównego celu\n2. Priorytetów\n3. Typu ruchu sieciowego\n4. Kontroli dostępu\n5. Implikacji uszkodzonego urządzenia\n6. Ochrony przed zagrożeniami\n7. Aktualizacjami</p>",
+            "answer": "<p><img src=\"/media/uploads/ner/20240111204625.png\"></p>"
+        },
+        {
+            "question": "<p>Model Purdue for Control Hierarchy jest frameworkiem pozwalającym pogrupować urządzenia i sprzęt wg. hierarchicznych poziomów funkcji oraz obszarów. Co to za poziomy?\n<img src=\"/media/uploads/ner/20240111221518.png\"></p>",
+            "answer": "<p><strong>Sieć korporacyjna</strong>\n 5. <strong>sieć korporacyjna</strong> - aplikacje korporacyjne CRM, ERP, VPN, HGB, CBA, FBI, itd\n 4. <strong>sieć planowania biznesowego i logistyki</strong> - systemy planowania, telefon, poczta e-mail, monitorowanie bezpieczeństwa, drukowania</p>"
+        },
+        {
+            "question": "<p>Model Purdue for Control Hierarchy jest frameworkiem pozwalającym pogrupować urządzenia i sprzęt wg. hierarchicznych poziomów funkcji oraz obszarów. Co to za poziomy?\n<img src=\"/media/uploads/ner/20240111221541.png\"></p>",
+            "answer": "<p><strong>Przemysłowa Strefa zdemilitaryzowana</strong>\n     <strong>strefa zdemilitaryzowana</strong> - stanowi bufor, w którym dane z sąsiednich poziomów mogę być współużytkowane, ale żaden ruch nie powinien przez nią przechodzić na drugą stronę</p>"
+        },
+        {
+            "question": "<p>Model Purdue for Control Hierarchy jest frameworkiem pozwalającym pogrupować urządzenia i sprzęt wg. hierarchicznych poziomów funkcji oraz obszarów. Co to za poziomy?\n<img src=\"/media/uploads/ner/20240111221653.png\"></p>",
+            "answer": "<p><strong>Strefa operacyjna</strong>\n3. <strong>operacje i sterowanie</strong> - monitorowanie i kontrolowanie systemu, planowanie produkcji, zapewnienie niezawodności, optymalizacja systemu, zarządzanie siecią w usługami IT z tym związanymi (DHCP, DNS)\n2. <strong>Sterowanie nadzorcze</strong> - administracja sieci/aplikacji systemu sterowania (w tym <strong>HMI</strong> (human-machine-interface)) i zbieranie danych\n1. <strong>Podstawowe sterowanie</strong> - komunikacja kontrolerów, urządzeń <strong>IED</strong> (intelligent electronic device), i dedykowanych <strong>HMI</strong>\n0. Proces: urządzenia (czujniki, wykonawcze, napędy, roboty) komunikują się ze sterownikami lub terminalami <strong>IED</strong>\n<em>Jeśli się zastanawiasz czemu wszystkie są zaliczone do strefy operacyjnej, a na zdjęciu są rozdzielone to nwm, tak jest na wykładzie</em></p>"
+        },
+        {
+            "question": "<p>Model Purdue for Control Hierarchy jest frameworkiem pozwalającym pogrupować urządzenia i sprzęt wg. hierarchicznych poziomów funkcji oraz obszarów. Co to za poziomy (jest ich 5)?\n<img src=\"/media/uploads/ner/20240111222047.png\"></p>",
+            "answer": "<p><strong>Strefa bezpieczeństwa</strong>\n    <strong>Krytyczne dla bezpieczeństwa</strong> - zarządzanie bezpieczeństwem systemu sterowania za pomocą czujników i innego sprzętu</p>"
+        },
+        {
+            "question": "<p>Model Purdue for Control Hierarchy jest frameworkiem pozwalającym pogrupować urządzenia i sprzęt wg. hierarchicznych poziomów funkcji oraz obszarów. Co to za poziomy (jest ich 5)?\n<img src=\"/media/uploads/ner/20240111205427.png\"></p>",
+            "answer": "<p><strong>Sieć korporacyjna</strong>\n 5. <strong>sieć korporacyjna</strong> - aplikacje korporacyjne CRM, ERP, VPN, HGB, CBA, FBI, itd\n 4. <strong>sieć planowania biznesowego i logistyki</strong> - systemy planowania, telefon, poczta e-mail, monitorowanie bezpieczeństwa, drukowania\n<strong>Przemysłowa Strefa zdemilitaryzowana</strong>\n     <strong>strefa zdemilitaryzowana</strong> - stanowi bufor, w którym dane z sąsiednich poziomów mogę być współużytkowane, ale żaden ruch nie powinien przez nią przechodzić na drugą stronę\n<strong>Strefa operacyjna</strong>\n3. <strong>operacje i sterowanie</strong> - monitorowanie i kontrolowanie systemu, planowanie produkcji, zapewnienie niezawodności, optymalizacja systemu, zarządzanie siecią w usługami IT z tym związanymi (DHCP, DNS)\n2. <strong>Sterowanie nadzorcze</strong> - administracja sieci/aplikacji systemu sterowania (w tym <strong>HMI</strong> (human-machine-interface)) i zbieranie danych\n1. <strong>Podstawowe sterowanie</strong> - komunikacja kontrolerów, urządzeń <strong>IED</strong> (intelligent electronic device), i dedykowanych <strong>HMI</strong>\n0. Proces: urządzenia (czujniki, wykonawcze, napędy, roboty) komunikują się ze sterownikami lub terminalami <strong>IED</strong>\n<strong>Strefa bezpieczeństwa</strong>\n    <strong>Krytyczne dla bezpieczeństwa</strong> - zarządzanie bezpieczeństwem systemu sterowania za pomocą czujników i innego sprzętu</p>"
+        },
+        {
+            "question": "<p>Jakie są dobre praktyki w zakresie bezpieczeństwa IoT?</p>",
+            "answer": "<ol>\n<li>Używaj NaJNowszEgo systemu operacyjnego i bibliotek</li>\n<li>użyj sprzętu, który zawiera funkcje bezpieczeństwa i przestrzenie gdzie nie można wykonywać kodu</li>\n<li>stosuj kod zaciemniający (nic nieznaczący ale utrudniający reverse engineering)</li>\n<li>wybieraj hasła losowo (<code>stud</code>,<code>dupa123</code>, itd.)</li>\n<li>używaj mechanizmów typu Root of trust i bezpiecznego rozruchu, aby mieć 'złoty' obraz oprogramowania działającego na urządzeniu klienta</li>\n<li>wyeliminuj zakodowane hasła w obrazach ROM (read-only-memory)</li>\n<li>zamknij porty IP</li>\n<li>używaj losowego układu przestrzeni adresowej, stosuj mechanizmy Stack Canaries oraz Guard bands</li>\n<li>Używaj AUtmoMATycznyCH AKtuAliZacji</li>\n<li>zaplanuj etap zakończenia eksploatacji (end-of-life) ⚰️✝️</li>\n<li>premiuj za znalezione błędy</li>\n<li>bierz udział w US-CERT aby na bieżąco dowiadywać się o exploitach i cyber-zagrożeniach</li>\n</ol>"
+        }
+    ]
+}

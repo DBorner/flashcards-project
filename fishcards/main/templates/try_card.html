@@ -1,0 +1,59 @@
+{% extends "template.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="{{done_percentage}}" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width: {{done_percentage}}%">{{done_percentage}} %</div>
+    </div>
+    <div class="card text-center mt-2">
+        <div class="card-header">
+        Question {{cards_done}}/{{cards_total}}
+        {% if correct_cards > 0 %}
+        <span class="badge rounded-pill text-bg-success">{{correct_cards}}</span>
+        {% endif %}
+        {% if semi_correct_cards > 0 %}
+        <span class="badge rounded-pill text-bg-success">{{semi_correct_cards}}</span>
+        {% endif %}
+        {% if wrong_cards > 0 %}
+        <span class="badge rounded-pill text-bg-success">{{wrong_cards}}</span>
+        {% endif %}
+        </div>
+        <div class="card-body">
+        <p class="card-text">{{try_card.fishcard.question|safe }}</p>
+        <button id='show-answer' class="btn btn-primary">Show answer</button>
+        <div id="answer" style="display: none;">
+            <p class="card-text" >{{try_card.fishcard.answer|safe }}</p>
+        </div>
+        <div id="buttons" style="display: none;">
+            <form id="answer-form" method="post" action="{% url 'try_card' card_id %} ">
+                {% csrf_token %}
+                <input type="hidden" id="answer-input" name="answer" value="">
+                <button type="button" class="answer-btn btn btn-danger" data-answer="wrong">Wrong</button>
+                <button type="button" class="answer-btn btn btn-warning" data-answer="semi-correct">Semi-Correct</button>
+                <button type="button" class="answer-btn btn btn-success" data-answer="correct">Correct</button>
+            </form>
+        </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+
+<script>
+    $(document).ready(function(){
+        $('#show-answer').click(function(){
+            $(this).hide(); 
+            $('#answer').show();
+            $('#buttons').show();
+        });
+
+         $('.answer-btn').click(function() {
+            var answerValue = $(this).data('answer');
+            $('#answer-input').val(answerValue); 
+            $('#answer-form').submit();
+        });
+    });
+</script>
+
+{% endblock %}

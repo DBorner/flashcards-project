@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto">
   <head>
-    <script src="../assets/js/color-modes.js"></script>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta
       name="author"
-      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+      content="Daniel Börner"
     />
     <meta name="generator" content="Hugo 0.118.2" />
     <title>{% block title %}{{ title }}{% endblock %}</title>
@@ -235,7 +233,25 @@
         </a>
       </header>
 
-      <main>{% block content %} {% endblock %}</main>
+      <main>{% block content %} {% endblock %}
+        {% if messages %}
+        <div class="toast-container position-static">
+          {% for message in messages %}
+          <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <strong class="me-auto">{{ message.tags }}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              {{ message }}
+            </div>
+          </div>
+        
+          {% endfor %}
+        </div>
+        {% endif %}
+
+      </main>
       <footer class="pt-5 my-5 text-body-secondary border-top">
         Created by Daniel Börner &middot; &copy; 2023
       </footer>
@@ -245,5 +261,10 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"></script>
+    {% block javascript %}{% endblock %}
   </body>
 </html>

@@ -9,7 +9,7 @@
         <div class="card-body">
           <h5 class="card-title">{{fishcard.name}} - {{num_of_cards}} card(s)</h5>
           <p class="card-text">{{fishcard.description}}</p>
-          <a href="#" class="btn btn-primary">Start</a>
+          <a href="{% url 'start_try' fishcard.id %}" class="btn btn-primary">Start</a>
         </div>
       </div>
     {% endfor %}

@@ -1,62 +1,90 @@
 # FishCard Platform
+
 Web app for fishcards
 
 ## Project setup
+
 ### Setup virtual env and pip.
+
 Windows
+
 ```
 > python -m venv env
 ```
+
 Linux
+
 ```
 $ virtualenv env
 ```
+
 ### Activate virtual env
+
 Linux
+
 ```
 $ source env/bin/activate
 ```
+
 Windows
+
 ```
 > env\scripts\activate
 ```
+
 ### Download packages
+
 ```
 $ pip install -r requirements.txt
 ```
+
 ### .env
+
 Create .env file or rename .env.local to .env
 
 ### Change directory
+
 ```
 cd fishcards
 ```
+
 ### Do migration
+
 ```
 $ python manage.py migrate
 ```
+
 ### Create superuser
+
 ```
 $ python manage.py createsuperuser
 ```
+
 ### Optional: load data
+
 ```
 $ python load_data.py
 ```
+
 ### Run server
+
 #### on ip:
+
 ```
 $ python manage.py runserver 0.0.0.0:8000
 ```
+
 #### locally:
+
 ```
 $ python manage.py runserver
 ```
+
 ## Available sets
 
 - IoT - 166 cards - Author: [Jakub-Ner](https://github.com/Jakub-Ner)
 
-- .Net - 42 cards - Author: [DBorner](https://github.com/DBorner)
+- .Net - 42 cards (Work in progress) - Author: [DBorner](https://github.com/DBorner)
 
 ## Screenshots
 

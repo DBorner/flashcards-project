@@ -11,4 +11,5 @@ urlpatterns = [
         name="try_detail",
     ),
     path("try/restore/<int:user_try_id>", views.restore_try, name="restore_try"),
+    path("try", views.UserTriesView.as_view(), name="try_list"),
 ]

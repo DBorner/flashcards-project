@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import *
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class HomePageView(TemplateView):
@@ -39,7 +40,7 @@ def start_try(request, fishcardset_id):
     return redirect("try_card", user_try_cards[0])
 
 
-class TryCardView(TemplateView):
+class TryCardView(LoginRequiredMixin, TemplateView):
     template_name = "try_card.html"
 
     def get(self, request, try_card_id):
@@ -100,7 +101,7 @@ class TryCardView(TemplateView):
         return redirect("try_detail", try_card.usertry.id)
 
 
-class UserTryDetailView(TemplateView):
+class UserTryDetailView(LoginRequiredMixin, TemplateView):
     template_name = "try_detail.html"
 
     def get(self, request, user_try_id):
@@ -164,13 +165,23 @@ class UserTryDetailView(TemplateView):
             messages.error(request, "Something went wrong")
             return redirect("try_detail", user_try.id)
 
+@login_required
 def restore_try(request, user_try_id):
     user_try = get_object_or_404(UserTry, id=user_try_id)
     if user_try.user != request.user:
         messages.error(request, "You are not allowed to see this card")
         return redirect("home")
-    if user_try.is_finished():
+    if user_try.is_finished:
         messages.error(request, "You can't restore a finished try")
         return redirect("home")
     request.session["user_try_cards"] = user_try.get_all_unanswered_cards_ids()
     return redirect("try_card", request.session["user_try_cards"][0])
+
+
+class UserTriesView(LoginRequiredMixin, TemplateView):
+    template_name = "user_tries.html"
+
+    def get(self, request):
+        user_tries = UserTry.objects.filter(user=request.user).order_by("-created_at")
+        context = {"user_tries": user_tries}
+        return render(request, self.template_name, context)

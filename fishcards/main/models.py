@@ -55,8 +55,17 @@ class UserTry(models.Model):
     def get_all_unanswered_cards_ids(self):
         return [card.id for card in self.get_not_answered_cards().order_by("?")]
     
+    @property
     def is_finished(self):
         return len(self.get_not_answered_cards()) == 0
+    
+    @property
+    def number_of_cards(self):
+        return len(self.get_all_cards())
+    
+    @property
+    def completed_percentage(self):
+        return int((self.number_of_cards - len(self.get_not_answered_cards())) / self.number_of_cards * 100)
 
 class UserTryCard(models.Model):
     class Status(models.TextChoices):

@@ -5,6 +5,8 @@ from .models import *
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth.password_validation import validate_password
 
 
 class HomePageView(TemplateView):
@@ -159,11 +161,14 @@ class UserTryDetailView(LoginRequiredMixin, TemplateView):
                     UserTryCard.objects.create(
                         usertry=new_user_try, fishcard=new_try_card.fishcard
                     )
-            request.session["user_try_cards"] = new_user_try.get_all_unanswered_cards_ids()
+            request.session[
+                "user_try_cards"
+            ] = new_user_try.get_all_unanswered_cards_ids()
             return redirect("try_card", request.session["user_try_cards"][0])
         else:
             messages.error(request, "Something went wrong")
             return redirect("try_detail", user_try.id)
+
 
 @login_required
 def restore_try(request, user_try_id):
@@ -185,3 +190,121 @@ class UserTriesView(LoginRequiredMixin, TemplateView):
         user_tries = UserTry.objects.filter(user=request.user).order_by("-created_at")
         context = {"user_tries": user_tries}
         return render(request, self.template_name, context)
+
+
+@login_required
+def logout_view(request):
+    logout(request)
+    return redirect("home")
+
+
+class LoginPageView(TemplateView):
+    template_name = "login.html"
+
+    def get(self, request):
+        if request.user.is_authenticated:
+            return redirect("home")
+        return super().get(request)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Login"
+        return context
+
+    def post(self, request):
+        if request.POST["email"] and request.POST["password"]:
+            user = User.objects.filter(email=request.POST["email"])
+            if not user.exists():
+                messages.error(request, "Invalid email or password")
+                return redirect("login")
+            username = user[0].username
+            user = authenticate(
+                request,
+                username=username,
+                password=request.POST["password"],
+            )
+            if user is not None:
+                login(request, user)
+                return redirect("home")
+            else:
+                messages.error(request, "Invalid email or password")
+                return redirect("login")
+        else:
+            messages.error(request, "Please fill all fields")
+            return redirect("login")
+
+
+class RegisterPageView(TemplateView):
+    template_name = "register.html"
+
+    def get(self, request):
+        if request.user.is_authenticated:
+            return redirect("home")
+        return super().get(request)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Register"
+        return context
+
+    def post(self, request):
+        if (
+            request.POST["email"]
+            and request.POST["password"]
+            and request.POST["password2"]
+        ):
+            if request.POST["password"] == request.POST["password2"]:
+                try:
+                    validate_password(request.POST["password"])
+                except Exception as e:
+                    for error in e:
+                        messages.error(request, error)
+                    return redirect("change_password")
+                try:
+                    user = User.objects.get(email=request.POST["email"])
+                    messages.error(request, "User already exists")
+                    return redirect("register")
+                except User.DoesNotExist:
+                    user = User.objects.create_user(
+                        username=request.POST["email"],
+                        email=request.POST["email"],
+                        password=request.POST["password"],
+                    )
+                    login(request, user)
+                    return redirect("home")
+            else:
+                messages.error(request, "Passwords don't match")
+                return redirect("register")
+        else:
+            messages.error(request, "Please fill all fields")
+            return redirect("register")
+
+
+class ChangePasswordPageView(LoginRequiredMixin, TemplateView):
+    template_name = "change_password.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Change Password"
+        return context
+
+    def post(self, request):
+        if request.POST["password"] and request.POST["password2"]:
+            if request.POST["password"] == request.POST["password2"]:
+                try:
+                    validate_password(request.POST["password"])
+                except Exception as e:
+                    for error in e:
+                        messages.error(request, error)
+                    return redirect("change_password")
+                user = User.objects.get(email=request.user.email)
+                user.set_password(request.POST["password"])
+                user.save()
+                messages.success(request, "Password changed successfully")
+                return redirect("home")
+            else:
+                messages.error(request, "Passwords don't match")
+                return redirect("change_password")
+        else:
+            messages.error(request, "Please fill all fields")
+            return redirect("change_password")

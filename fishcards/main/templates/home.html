@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    {% for fishcard, num_of_cards in fish_card_sets.items %}
+    <div class="card" style="width: 18rem;">
+        <img src="media/{{ MEDIA_URL }}/{{fishcard.image}}" class="card-img-top" alt="card-img">
+        <div class="card-body">
+          <h5 class="card-title">{{fishcard.name}} - {{num_of_cards}} card(s)</h5>
+          <p class="card-text">{{fishcard.description}}</p>
+          <a href="#" class="btn btn-primary">Start</a>
+        </div>
+      </div>
+    {% endfor %}
+{% endblock %}

@@ -9,6 +9,7 @@
     <meta name="author" content="Daniel Börner" />
     <meta name="generator" content="Hugo 0.118.2" />
     <title>{% block title %}{{ title }}{% endblock %}</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" >
     <script src="{% static "assets/js/color-modes.js" %}"></script>
     <link
       rel="canonical"
@@ -225,6 +226,7 @@
         <header
           class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
         >
+        <img class="bi me-2" src="{% static 'images/favicon.png' %}" width="50" height="50"/>
           <a
             href="/"
             class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"

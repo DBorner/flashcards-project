@@ -19,19 +19,20 @@
     <div class="card text-center mt-2">
         <div class="card-header">
         Question {{cards_done}}/{{cards_total}}
-        {% if correct_cards > 0 %}
-        <span class="badge rounded-pill text-bg-success">{{correct_cards}}</span>
+        {% if wrong_cards > 0 %}
+        <span class="badge rounded-pill text-bg-danger">{{wrong_cards}}</span>
         {% endif %}
         {% if semi_correct_cards > 0 %}
         <span class="badge rounded-pill text-bg-warning">{{semi_correct_cards}}</span>
         {% endif %}
-        {% if wrong_cards > 0 %}
-        <span class="badge rounded-pill text-bg-danger">{{wrong_cards}}</span>
+        {% if correct_cards > 0 %}
+        <span class="badge rounded-pill text-bg-success">{{correct_cards}}</span>
         {% endif %}
+        
         </div>
         <div class="card-body try_card">
         <p class="card-text">{{try_card.fishcard.question|safe }}</p>
-        <button id='show-answer' class="btn btn-primary">Show answer</button>
+        <button id='show-answer' class="btn btn-primary">Show answer <kbd>Space</kbd> </button>
         <div id="answer" style="display: none;">
             <p class="card-text" >{{try_card.fishcard.answer|safe }}</p>
         </div>
@@ -39,9 +40,15 @@
             <form id="answer-form" method="post" action="{% url 'try_card' card_id %} ">
                 {% csrf_token %}
                 <input type="hidden" id="answer-input" name="answer" value="">
-                <button type="button" class="answer-btn btn btn-danger" data-answer="wrong">Wrong</button>
-                <button type="button" class="answer-btn btn btn-warning" data-answer="semi-correct">Semi-Correct</button>
-                <button type="button" class="answer-btn btn btn-success" data-answer="correct">Correct</button>
+                <button type="button" id="wrong-btn" class="answer-btn btn btn-danger" data-answer="wrong"><kbd><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"></path>
+                  </svg></kbd> Wrong</button>
+                <button type="button" id="semi-btn" class="answer-btn btn btn-warning" data-answer="semi-correct">Semi-Correct <kbd><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"></path>
+                  </svg></kbd></button>
+                <button type="button" id="correct-btn" class="answer-btn btn btn-success" data-answer="correct">Correct <kbd><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
+                  </svg></kbd></button>
             </form>
         </div>
         </div>
@@ -51,9 +58,11 @@
 {% block javascript %}
 
 <script>
+    var is_answer_shown = false;
     $(document).ready(function(){
         $('#show-answer').click(function(){
             $(this).hide(); 
+            is_answer_shown = true;
             $('#answer').show();
             $('#buttons').show();
         });
@@ -63,7 +72,48 @@
             $('#answer-input').val(answerValue); 
             $('#answer-form').submit();
         });
+
+        window.addEventListener("keydown", function (event) {
+            console.log(event.key);
+            switch (event.key) {
+              case "ArrowUp":
+                if (is_answer_shown) {
+                    $('#semi-btn').click();
+                }else{
+                    $('#show-answer').click();
+                }
+                break;
+                case "ArrowDown":
+                if (is_answer_shown) {
+                    $('#semi-btn').click();
+                }else{
+                    $('#show-answer').click();
+                }
+              case "ArrowLeft":
+                if (is_answer_shown) {
+                    $('#wrong-btn').click();
+                }else{
+                    $('#show-answer').click();
+                }
+                break;
+              case "ArrowRight":
+                if (is_answer_shown) {
+                    $('#correct-btn').click();
+                }else{
+                    $('#show-answer').click();
+                }
+                break;
+                case " ":
+                $('#show-answer').click();
+                break;
+              default:
+                return;
+            }
+          
+            event.preventDefault();
+          }, true);
     });
+
 </script>
 
 {% endblock %}

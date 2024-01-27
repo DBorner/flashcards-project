@@ -1,6 +1,6 @@
 # FishCard Platform
 
-Web app for fishcards
+Web app for flashcards
 
 ## Project setup
 

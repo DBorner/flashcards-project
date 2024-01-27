@@ -170,6 +170,126 @@
         {
             "question": "<p>Zalety klas/interfejs&oacute;w generycznych</p>",
             "answer": "<p><img src=\"/media/uploads/2024/01/24/image_Dntxtg6.png\" style=\"height:651px; width:913px\" /></p>"
+        },
+        {
+            "question": "<p>Czym jest DIP?</p>",
+            "answer": "<p><strong>Dependency Inversion Principle</strong> (DIP), czyli zasada odwracania zależności.</p>\r\n\r\n<p>Zasada odwracania zależności jest wzorcem projektowym, kt&oacute;ry m&oacute;wi nam o pisaniu luźno powiązanych klas:</p>\r\n\r\n<p>&ndash; moduły wysokiego poziomu nie powinny zależeć od moduł&oacute;w niskiego poziomu</p>\r\n\r\n<p>&ndash; abstrakcje nie powinny zależeć od szczeg&oacute;ł&oacute;w. To szczeg&oacute;ły powinny zależeć od abstrakcji</p>"
+        },
+        {
+            "question": "<p>Czym jest IoC?</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image.png\" style=\"height:636px; width:882px\" /></p>"
+        },
+        {
+            "question": "<p>Co to&nbsp;<strong>Dependency Injection?</strong></p>",
+            "answer": "<p><strong>technika </strong>wstrzykiwania zależności, aby całkiem zastosować wzorzec DIP. Są 3 sposoby wstrzykiwania zależności:</p>\r\n\r\n<p>&ndash; przez konstruktor</p>\r\n\r\n<p>&ndash; przez metodę</p>\r\n\r\n<p>&ndash; przez właściwość</p>"
+        },
+        {
+            "question": "<p>Rozwiń <strong>MVC</strong></p>",
+            "answer": "<p>Model-Widok-Kontroler ( ang. Model-View-Controller)</p>"
+        },
+        {
+            "question": "<p>Opisz strukturę MVC</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_9tTgsfS.png\" style=\"height:493px; width:885px\" /></p>"
+        },
+        {
+            "question": "<p>Konsekwencje użycia MVC</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_xopgwQz.png\" style=\"height:599px; width:884px\" /></p>"
+        },
+        {
+            "question": "<p>Przebieg obsługi żądania HTTP w MVC</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_72jQ8VH.png\" style=\"height:325px; width:917px\" /></p>"
+        },
+        {
+            "question": "<p>Za co odpowiada Program.cs? (.NET 5)</p>",
+            "answer": "<p>Za tworzenie aplikacji,<br />\r\n&ndash; Tworzy (CreateHostBuilder(args).Build()) i uruchamia (.Run()) serwer</p>\r\n\r\n<p>&ndash; Podczas tego procesu uruchamia metody konfiguracyjne klasy Startup z pliku Startup.cs</p>\r\n\r\n<p>&ndash; Kod tworzony domyślnie (jak poniżej) przygotowuje szkielet przebiegu obsługi żądania w spos&oacute;b jak zostało opisane wcześniej.</p>"
+        },
+        {
+            "question": "<p>Za co odpowiada Startup.cs? (.NET 5)</p>",
+            "answer": "<p>&bull; Plik Startup.cs konfiguruje r&oacute;żne elementy wcześniej omawianego procesu przetwarzania żądania HTTP.</p>\r\n\r\n<p>&ndash; Przy projekcie MVC Core &ndash; zawartość jak poniżej</p>\r\n\r\n<p>&bull; Pierwszą uruchamianą metodą jest ConfigureServices().</p>\r\n\r\n<p>&bull; Poprzez metodę rozszerzającą AddControllersWithViews() dodajemy do projektu możliwość używania wzorca MVC</p>\r\n\r\n<p>&bull; Poprzez kolekcję serwis&oacute;w IServiceCollection będą wstrzykiwane inne klasy przydatne kontrolerom i i innym klasom.</p>\r\n\r\n<p>&ndash; Klasy kontroler&oacute;w są serwisami, kt&oacute;re są tworzone i uruchamiane poprzez kontener serwis&oacute;w z użyciem mechanizmu refleksji</p>\r\n\r\n<p>&bull; W metodzie Configure() ustawiamy kolejne elementy działania naszego serwera: reakcje na błędy zależnie od typu kompilacji, użycie https, użycie plik&oacute;w statycznych (z wwwroot), routingu, autoryzacji i podstawowa zasada routingu (app.UseEndpoints).</p>\r\n\r\n<p>&bull; Argumenty dla tej metody są wstrzykiwane z ww. kontenera serwis&oacute;w.</p>"
+        },
+        {
+            "question": "<p>Jak działa silnik widok&oacute;w?</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_EXCJ0LI.png\" style=\"height:673px; width:935px\" /></p>"
+        },
+        {
+            "question": "<p>Modele danych w MVC dzielimy na:</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_MpWlhPN.png\" style=\"height:531px; width:870px\" /></p>"
+        },
+        {
+            "question": "<p>Rozwiń ASP.NET</p>",
+            "answer": "<p>&nbsp;<strong>Active Server Pages Network Enabled Technologies</strong></p>"
+        },
+        {
+            "question": "<p>Co to&nbsp;Entity Framework Core?</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_zVYN6b3.png\" style=\"height:486px; width:890px\" /></p>"
+        },
+        {
+            "question": "<p>Czym się r&oacute;żni&nbsp;Code First Approach od&nbsp;Database First Approach?</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_GKIlUvK.png\" style=\"height:612px; width:908px\" /></p>"
+        },
+        {
+            "question": "<p>Co to JSON?</p>",
+            "answer": "<p>JavaScript Object Notation &ndash; tekstowy lekki format wymiany danych komputerowych</p>\r\n\r\n<p>&bull; Całość to jeden obiekt w języku Javascript.</p>\r\n\r\n<p>&bull; Obiekty zapisane są w nawiasach klamrowych, tablice w nawiasach kwadratowych.</p>\r\n\r\n<p>&bull; Obiekt to słownik par klucz-wartość rozdzielonych dwukropkiem, kolejna para po przecinku.</p>\r\n\r\n<p>&bull; Dopuszczalne są tylko bardzo podstawowe typy (jak poniżej dla value).</p>"
+        },
+        {
+            "question": "<p>Idea migracji</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_erfxyB5.png\" style=\"height:313px; width:868px\" /></p>"
+        },
+        {
+            "question": "<p>Mechanizm &ndash; ciasteczka</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_XxldPpd.png\" style=\"height:203px; width:763px\" /></p>"
+        },
+        {
+            "question": "<p>Co to sesja?</p>\r\n\r\n<p><img alt=\"Studenci w strachu, nadchodzi sesja! Oto najlepsze memy o nauce i  studentach 22.01.2024 | Nowa Trybuna Opolska\" src=\"https://d-art.ppstatic.pl/kadry/k/r/1/c3/cf/659d886a4a524_o_large.jpg\" style=\"height:179px; width:200px\" /></p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_lQWF59o.png\" style=\"height:636px; width:931px\" /></p>"
+        },
+        {
+            "question": "<p>Co to CSRF?</p>",
+            "answer": "<p>Cross-Site Request Forgery<br />\r\n<img src=\"/media/uploads/2024/01/27/image_uXCMiKE.png\" style=\"height:353px; width:865px\" /></p>"
+        },
+        {
+            "question": "<p>Jak zabezpieczyć się przeciw CSRF?</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_UvVGOlh.png\" style=\"height:396px; width:875px\" /></p>"
+        },
+        {
+            "question": "<p>Co to strony Razor?</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_zWmDy17.png\" style=\"height:306px; width:840px\" /></p>"
+        },
+        {
+            "question": "<p>Razor Vs MVC</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_KC2teVy.png\" style=\"height:568px; width:895px\" /></p>"
+        },
+        {
+            "question": "<p>Proces uruchomienia aplikacji .net</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_BbL56tB.png\" style=\"height:282px; width:937px\" /></p>"
+        },
+        {
+            "question": "<p>co to REST?</p>",
+            "answer": "<p><strong>Representational State Transfer</strong></p>"
+        },
+        {
+            "question": "<p>Opisz REST</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_ksxqR3x.png\" style=\"height:163px; width:779px\" /></p>"
+        },
+        {
+            "question": "<p>Metody HTTP i adresy w typie RESTful</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_VlRVVA2.png\" style=\"height:555px; width:889px\" /></p>"
+        },
+        {
+            "question": "<p>Co to&nbsp;payload w API?</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_PeX34NK.png\" style=\"height:599px; width:907px\" /></p>"
+        },
+        {
+            "question": "<p>Rozwiń i wyjaśnij AJAX</p>",
+            "answer": "<p>AJAX &ndash; (ang. Asynchronous JavaScript and XML) asynchroniczny JavaScript i XML</p>\r\n\r\n<p>&ndash; Czyli kod (funkcja) JavaScript, kt&oacute;ra w spos&oacute;b asynchroniczny wyśle żądanie do serwera i wykona działanie po otrzymaniu odpowiedzi w czasie, gdy przeglądarka całych czas prezentuje bieżącą stronę WWW użytkownikowi i reaguje na jego</p>"
+        },
+        {
+            "question": "<p>Czym są aplikacje SPA?</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_BD5Jnpn.png\" style=\"height:433px; width:871px\" /></p>"
+        },
+        {
+            "question": "<p>Czym są aplikacje SPA? (W .NET aplikacja typu Blazor)</p>",
+            "answer": "<p><img src=\"/media/uploads/2024/01/27/image_BD5Jnpn.png\" style=\"height:433px; width:871px\" /></p>"
         }
     ]
 }

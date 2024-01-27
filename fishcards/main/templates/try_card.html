@@ -77,35 +77,36 @@
             console.log(event.key);
             switch (event.key) {
               case "ArrowUp":
-                if (is_answer_shown) {
-                    $('#semi-btn').click();
-                }else{
-                    $('#show-answer').click();
-                }
-                break;
+                    if (is_answer_shown) {
+                        $('#semi-btn').click();
+                    }else{
+                        $('#show-answer').click();
+                    }
+                    break;
                 case "ArrowDown":
-                if (is_answer_shown) {
-                    $('#semi-btn').click();
-                }else{
-                    $('#show-answer').click();
-                }
+                    if (is_answer_shown) {
+                        $('#semi-btn').click();
+                    }else{
+                        $('#show-answer').click();
+                    }
+                    break;
               case "ArrowLeft":
-                if (is_answer_shown) {
-                    $('#wrong-btn').click();
-                }else{
-                    $('#show-answer').click();
-                }
-                break;
+                    if (is_answer_shown) {
+                        $('#wrong-btn').click();
+                    }else{
+                        $('#show-answer').click();
+                    }
+                    break;
               case "ArrowRight":
-                if (is_answer_shown) {
-                    $('#correct-btn').click();
-                }else{
-                    $('#show-answer').click();
-                }
-                break;
+                    if (is_answer_shown) {
+                        $('#correct-btn').click();
+                    }else{
+                        $('#show-answer').click();
+                    }
+                    break;
                 case " ":
-                $('#show-answer').click();
-                break;
+                    $('#show-answer').click();
+                    break;
               default:
                 return;
             }

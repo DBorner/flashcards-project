@@ -58,6 +58,7 @@ class TryCardView(LoginRequiredMixin, TemplateView):
         cards_done = correct_cards + semi_correct_cards + wrong_cards
         done_percentage = int(cards_done / cards_total * 100)
         context = {
+            "title": f"{user_try.fishcardset.name} ({cards_done}/{cards_total})",
             "try_card": try_card,
             "cards_total": cards_total,
             "cards_done": cards_done,
@@ -120,6 +121,7 @@ class UserTryDetailView(LoginRequiredMixin, TemplateView):
         else:
             is_finished = False
         context = {
+            "title": f"Try detail - {user_try.fishcardset.name} ({cards_done}/{cards_total})",
             "user_try": user_try,
             "all_questions": all_questions,
             "cards_total": cards_total,
@@ -184,7 +186,7 @@ class UserTriesView(LoginRequiredMixin, TemplateView):
 
     def get(self, request):
         user_tries = UserTry.objects.filter(user=request.user).order_by("-created_at")
-        context = {"user_tries": user_tries}
+        context = {"user_tries": user_tries, "title": "Tries"}
         return render(request, self.template_name, context)
 
 

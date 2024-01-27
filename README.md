@@ -82,9 +82,9 @@ $ python manage.py runserver
 
 ## Available sets
 
-- IoT - 166 cards - Author: [Jakub-Ner](https://github.com/Jakub-Ner)
+- [IoT](https://github.com/Jakub-Ner/iot-fiszki) - 166 cards - Author: [Jakub-Ner](https://github.com/Jakub-Ner)
 
-- .Net - 42 cards (Work in progress) - Author: [DBorner](https://github.com/DBorner)
+- .Net - 72 cards - Author: [DBorner](https://github.com/DBorner)
 
 ## Screenshots
 

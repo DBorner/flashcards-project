@@ -1,0 +1,231 @@
+{
+    "name": "Android",
+    "description": "Fiszki na egzamin z Androida 🙂\r\nAutor: Daniel Börner",
+    "image": "uploads/None_20240129170125.webp",
+    "cards": [
+        {
+            "question": "<p style=\"list-style-type:decimal\"><span style=\"color:#000000\">Wpisz nazwę metody w kt&oacute;rej należy zamieścić kod do obsługi zdarzenia wyboru zakładki w systemie Android</span></p>",
+            "answer": "<p><span style=\"color:#000000\"><strong>Odp: onTabSelected </strong></span><span style=\"color:#000000\">//wykład 5, strona 24</span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<p style=\"list-style-type:decimal\"><span style=\"color:#000000\">Jaka metoda jest wywoływana gdy pojawią się nowe dane o lokalizacji?</span></p>",
+            "answer": "<p style=\"margin-left:48px\"><span style=\"color:#000000\"><strong>Odp: onLocationChanged </strong></span><span style=\"color:#000000\">//wykład 9, strona 20</span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<p style=\"list-style-type:decimal\"><span style=\"color:#000000\">Co trzeba dać, aby opcja pojawiła się na toolbarze?</span></p>",
+            "answer": "<p style=\"margin-left:48px\"><span style=\"color:#000000\">Odp: </span><span style=\"color:#000000\"><strong>showAsAction w XML </strong></span><span style=\"color:#000000\">//wykład 4, strona 29</span></p>"
+        },
+        {
+            "question": "<p style=\"list-style-type:decimal\"><span style=\"color:#000000\">Gdzie wstawisz kod za pomocą kt&oacute;rego w pozycjach listy pojawią się r&oacute;żne obrazki?</span></p>",
+            "answer": "<p style=\"margin-left:48px\"><span style=\"color:#000000\">Odp: </span><span style=\"color:#000000\"><strong>w metodzie getView() adaptera listy. </strong></span><span style=\"color:#000000\">//wykład 3, strona 33</span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<p style=\"list-style-type:decimal\"><span style=\"color:#000000\">Jaki parametr ma metoda wywołana gdy pojawia się wartość z obsługiwanego sensora?</span></p>",
+            "answer": "<p style=\"margin-left:48px\"><span style=\"color:#000000\">Odp: </span><span style=\"color:#000000\"><strong>SensorEvent </strong></span><span style=\"color:#000000\">//wykład 9, strona 8</span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<p style=\"list-style-type:decimal\"><span style=\"color:#000000\">Kt&oacute;re z działań powinno być zaimplementowane w celu realizacji zalecanego schematu komunikacji z aktywnością?</span></p>",
+            "answer": "<p style=\"margin-left:48px\"><span style=\"color:#000000\">Odp: </span><span style=\"color:#000000\"><strong>Fragment definiuje interfejs słuchacza, kt&oacute;ry musi implementować aktywność.</strong></span><span style=\"color:#000000\"> //wykład 5, strona 14-15</span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<p style=\"list-style-type:decimal\"><span style=\"color:#000000\">Podaj metody, kt&oacute;re są wykonywane przy przywracaniu aktywności w systemie Android ze stanu w kt&oacute;rym była całkowicie przysłonięta przez inną aktywność</span></p>",
+            "answer": "<p style=\"margin-left:48px\"><span style=\"color:#000000\">Odp: </span><span style=\"color:#000000\"><strong>onRestart, onStart, onResume </strong></span><span style=\"color:#000000\">//wykład 2, strona 4</span></p>"
+        },
+        {
+            "question": "<ol>\r\n\t<li style=\"list-style-type:decimal\"><span style=\"color:#000000\">Kt&oacute;ry obiekt nie wymaga adapteru widoku?</span></li>\r\n</ol>",
+            "answer": "<p><span style=\"color:#000000\">Odp: </span><span style=\"color:#000000\"><strong>CheckBox</strong></span></p>"
+        },
+        {
+            "question": "<p style=\"list-style-type:decimal\"><span style=\"color:#000000\">Jaka metoda jest wywoływana gdy pojawia się nowa wartość do przekazania z sensora?</span></p>",
+            "answer": "<p style=\"margin-left:48px\"><span style=\"color:#000000\">Odp: </span><span style=\"color:#000000\"><strong>onSensorChanged //</strong></span><span style=\"color:#000000\">wykład 9, strona 8</span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<p style=\"list-style-type:decimal\"><span style=\"color:#000000\">Kt&oacute;re elementy mogą być brane pod uwagę przy wyborze przez system Android aktywności do uruchomienia przez mechanizm filtrowania intencji?</span></p>",
+            "answer": "<p style=\"margin-left:48px\"><span style=\"color:#000000\">Odp: </span><span style=\"color:#000000\"><strong>nazwa klasy intencji, nazwa klasy aktywności</strong></span><span style=\"color:#000000\"> //chyba wykład 3, strona 8</span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<p style=\"list-style-type:decimal\"><span style=\"color:#000000\">W kt&oacute;rym pliku należy zdefiniować filtr intencji dla aplikacji systemu Android?</span></p>\r\n\r\n<ol>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">main.xml</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">Filter.xml</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">Intent.xml</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">AndroidManifest.xml</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">AndroidFilter.xml</span></li>\r\n</ol>",
+            "answer": "<p><span style=\"color:#000000\">d) AndroidManifest.xml //wykład 3, strona 8</span></p>"
+        },
+        {
+            "question": "<p style=\"list-style-type:decimal\"><span style=\"color:#000000\">Zadaniem metody getView() własnego adaptera dla listy o dostosowanym widoku jest: //wykład 3, strona 33</span></p>\r\n\r\n<ol>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">Utworzenie nowego obiektu widoku przy pierwszym wywołaniu metody</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">dostarczenie widoku dla każdej pozycji listy</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">tworzenie nowych obiekt&oacute;w widok&oacute;w dla każdego wywołania</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">pobranie widoku pozycji list</span></li>\r\n</ol>",
+            "answer": "<ol>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\"><strong>Utworzenie nowego obiektu widoku przy pierwszym wywołaniu metody</strong></span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\"><strong>dostarczenie widoku dla każdej pozycji listy</strong></span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">tworzenie nowych obiekt&oacute;w widok&oacute;w dla każdego wywołania</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\"><strong>pobranie widoku pozycji list</strong></span></li>\r\n</ol>"
+        },
+        {
+            "question": "<p style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Kt&oacute;re rodzaje aplikacji </span><span style=\"color:#000000\"><strong>nie korzystają</strong></span><span style=\"color:#000000\"> z maszyny wirtualnej systemu?</span></p>",
+            "answer": "<p><span style=\"color:#000000\">Odp: </span><span style=\"color:#000000\"><strong>aplikacje natywne </strong></span></p>"
+        },
+        {
+            "question": "<p style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Kt&oacute;re z rodzaj&oacute;w aplikacji </span><span style=\"color:#000000\"><strong>nie są </strong></span><span style=\"color:#000000\">aplikacjami system&oacute;w wbudowanych?&nbsp;</span></p>",
+            "answer": "<p style=\"margin-left:96px\"><span style=\"color:#000000\">Odp: </span><span style=\"color:#000000\"><strong>samodzielne</strong></span><span style=\"color:#000000\"> //nie wiem czy to nas dotyczy - przypisek redakcji</span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<ol start=\"15\">\r\n\t<li style=\"list-style-type:decimal\"><span style=\"color:#000000\">&nbsp;Plik layoutu jest w pliku </span><span style=\"color:#5f6368\"><span style=\"background-color:#ffffff\"><strong>AndroidManifest</strong></span></span><span style=\"color:#000000\">.xml. Uzupełnij kod: //wykład 2, strona 29</span></li>\r\n</ol>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">public void onCreate()</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">{</span></p>\r\n\r\n<p style=\"margin-left:149px; margin-right:5px\"><span style=\"color:#000000\"><strong><span style=\"background-color:#e74c3c\">.....................................</span></strong>(R.layout.costam);</span></p>\r\n\r\n<p style=\"margin-left:149px; margin-right:5px\"><span style=\"color:#000000\">TextView zmienna1 = (TextView) .<strong><span style=\"background-color:#e74c3c\">........................................</span></strong>.</span><span style=\"color:#000000\">(R.id.IDcostam);</span></p>\r\n\r\n<p style=\"margin-left:144px\"><span style=\"color:#000000\">&hellip;</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">}</span></p>\r\n\r\n<p>&nbsp;</p>",
+            "answer": "<ol start=\"15\">\r\n\t<li style=\"list-style-type:decimal\"><span style=\"color:#000000\">&nbsp;Plik layoutu jest w pliku </span><span style=\"color:#5f6368\"><span style=\"background-color:#ffffff\"><strong>AndroidManifest</strong></span></span><span style=\"color:#000000\">.xml. Uzupełnij kod: //wykład 2, strona 29</span></li>\r\n</ol>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">public void onCreate()</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">{</span></p>\r\n\r\n<p style=\"margin-left:149px; margin-right:5px\"><span style=\"color:#000000\"><strong>setContentView</strong></span><span style=\"color:#000000\">(R.layout.costam);</span></p>\r\n\r\n<p style=\"margin-left:149px; margin-right:5px\"><span style=\"color:#000000\">TextView zmienna1 = (TextView) </span><span style=\"color:#000000\"><strong>findViewById</strong></span><span style=\"color:#000000\">(R.id.IDcostam);</span></p>\r\n\r\n<p style=\"margin-left:144px\"><span style=\"color:#000000\">&hellip;</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">}</span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<ol start=\"15\">\r\n\t<li style=\"list-style-type:decimal\"><span style=\"color:#000000\">Jakie metody będą wywoływane przy pierwszym uruchomieniu aplikacji w systemie Android? //wykład 2, strona 4</span>\r\n\t<ol>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">onCreate</span></li>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">onInit</span></li>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">onRestart</span></li>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">onResume</span></li>\r\n\t</ol>\r\n\t</li>\r\n</ol>",
+            "answer": "<ol start=\"15\">\r\n\t<li style=\"list-style-type:decimal\"><span style=\"color:#000000\">Jakie metody będą wywoływane przy pierwszym uruchomieniu aplikacji w systemie Android? //wykład 2, strona 4</span>\r\n\t<ol>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\"><strong>onCreate</strong></span></li>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">onInit</span></li>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">onRestart</span></li>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\"><strong>onResume</strong></span></li>\r\n\t</ol>\r\n\t</li>\r\n</ol>"
+        },
+        {
+            "question": "<ol start=\"15\">\r\n\t<li style=\"list-style-type:decimal\"><span style=\"color:#000000\">Co będzie brane pod uwagę podczas startu aktywność z użyciem filtra intencji? //chyba wykład 3, strona 8</span>\r\n\t<ol>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">Nazwa klasy wywoływanej intencji</span></li>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">papież</span></li>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">XD</span></li>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">Nazwa aktywności w filtrze intencji</span></li>\r\n\t</ol>\r\n\t</li>\r\n</ol>",
+            "answer": "<ol start=\"15\">\r\n\t<li style=\"list-style-type:decimal\"><span style=\"color:#000000\">Co będzie brane pod uwagę podczas startu aktywność z użyciem filtra intencji? //chyba wykład 3, strona 8</span>\r\n\t<ol>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\"><strong>Nazwa klasy wywoływanej intencji</strong></span></li>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">papież</span></li>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">XD</span></li>\r\n\t\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\"><strong>Nazwa aktywności w filtrze intencji</strong></span></li>\r\n\t</ol>\r\n\t</li>\r\n</ol>"
+        },
+        {
+            "question": "<ol start=\"15\">\r\n\t<li style=\"list-style-type:decimal\"><span style=\"color:#000000\">W systemie Android tworzysz intencję iii, za pomocą kt&oacute;rej uruchamiasz inną aktywność poprzez akcję ACTION_EDIT, przekazując jej dane ddd. Druga aktywność ma zwracać dane aktywności wywołującej ją. Uzupełnij kod Java realizujący te działanie //wykład 3, strona 9</span></li>\r\n</ol>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p style=\"margin-left:48px\"><span style=\"color:#000000\">{</span></p>\r\n\r\n<p style=\"margin-left:96px; margin-right:5px\"><span style=\"color:#000000\">Intent iii = new Intent(</span><span style=\"color:#000000\"><strong><span style=\"background-color:#000000\">Intent</span></strong></span><span style=\"color:#000000\">.ACTION_EDIT);</span></p>\r\n\r\n<p style=\"margin-left:96px; margin-right:5px\"><span style=\"color:#000000\">iii.setData(</span><span style=\"color:#000000\"><strong><span style=\"background-color:#000000\">Uri</span></strong></span><span style=\"color:#000000\">.parse(ddd));</span></p>\r\n\r\n<p style=\"margin-left:96px; margin-right:5px\"><span style=\"color:#000000\"><strong><span style=\"background-color:#000000\">aktywnosc</span>.<span style=\"background-color:#000000\">startActivity</span></strong></span><span style=\"color:#000000\">(iii);</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">&hellip;</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">}</span></p>\r\n\r\n<p>&nbsp;</p>",
+            "answer": "<p style=\"margin-left:48px\"><span style=\"color:#000000\">{</span></p>\r\n\r\n<p style=\"margin-left:96px; margin-right:5px\"><span style=\"color:#000000\">Intent iii = new Intent(</span><span style=\"color:#000000\"><strong>Intent</strong></span><span style=\"color:#000000\">.ACTION_EDIT);</span></p>\r\n\r\n<p style=\"margin-left:96px; margin-right:5px\"><span style=\"color:#000000\">iii.setData(</span><span style=\"color:#000000\"><strong>Uri</strong></span><span style=\"color:#000000\">.parse(ddd));</span></p>\r\n\r\n<p style=\"margin-left:96px; margin-right:5px\"><span style=\"color:#000000\"><strong>aktywnosc.startActivity</strong></span><span style=\"color:#000000\">(iii);</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">&hellip;</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">}</span></p>"
+        },
+        {
+            "question": "<ol start=\"15\">\r\n\t<li style=\"list-style-type:decimal\"><span style=\"color:#000000\">Podaj nazwy metod kt&oacute;re są wykonywane przy uruchamianiu aktywności w systemie Android dla fragmentu (klasy Fragment) w tej aktywności. Podaj tylko te metody, kt&oacute;re nie występują dla aktywności (klasy Activity) //wykład 5, strona 3</span></li>\r\n</ol>\r\n\r\n<p style=\"margin-left:48px\"><span style=\"color:#000000\">Uwagi:</span></p>\r\n\r\n<p style=\"margin-left:48px\"><span style=\"color:#000000\">właściwa kolejność jest najwyżej oceniana</span></p>\r\n\r\n<p style=\"margin-left:48px\"><span style=\"color:#000000\">podać same nazwy, bez nawias&oacute;w i bez parametr&oacute;w</span></p>\r\n\r\n<p>&nbsp;</p>",
+            "answer": "<p style=\"margin-left:48px; margin-right:5px\"><span style=\"color:#000000\">1. onAttach</span></p>\r\n\r\n<p style=\"margin-left:48px; margin-right:5px\"><span style=\"color:#000000\">2. onCreateView</span></p>\r\n\r\n<p style=\"margin-left:48px; margin-right:5px\"><span style=\"color:#000000\">3. onActivityCreated</span></p>\r\n\r\n<p style=\"margin-left:48px; margin-right:5px\"><span style=\"color:#000000\">//poniżej zdjęcie jakby ktoś nie wiedział o co chodzi - przypisek redakcji</span></p>\r\n\r\n<p><span style=\"color:#000000\"><img src=\"https://lh7-us.googleusercontent.com/bI73Mjsm-3q800NvLFbwBlxClxnADAGJkYM5xs6g0BDOX1qWhaJaSgycT7muHoHzJe8gHb55ZOACBsTCljs7FLR0jtCeATdC7TmZ9HKd-C7qVBJ9Swx-YCa3MDBxuGjw7Lqxe9y59cnNucl4QUttzA\" style=\"height:224px; width:525px\" /></span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<ol start=\"15\">\r\n\t<li style=\"list-style-type:decimal\"><span style=\"color:#000000\">Kt&oacute;rej klasy można użyć do realizacji widok&oacute;w niekt&oacute;rych element&oacute;w ekranu w systemie Android?</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">MenuInflater</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">LayoutInflater</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">ContentView</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">Inflater</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">LayoutView</span></li>\r\n</ol>",
+            "answer": "<ol>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\"><strong>MenuInflater</strong></span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\"><strong>LayoutInflater</strong></span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">ContentView</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">Inflater</span></li>\r\n\t<li style=\"list-style-type:lower-alpha\"><span style=\"color:#000000\">LayoutView</span></li>\r\n</ol>"
+        },
+        {
+            "question": "<ol start=\"15\">\r\n\t<li style=\"list-style-type:decimal\"><span style=\"color:#000000\">W aplikacji systemu Android masz w obiekcie Bbb typu Bundle dane do przekazania drugiej aktywności tej aplikacji, zdefiniowanej w klasi Dwa w pliku Dwa.java. Tą drugą aktywność uruchamiasz przekazując te dane. Uzupełnij kod pliku .java realizujący to działanie. //wykład 3, strona 18</span></li>\r\n</ol>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">onCreate(...)</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">{</span></p>\r\n\r\n<p style=\"margin-left:101px; margin-right:5px\"><span style=\"color:#000000\">Intent iii = new Intent(this, </span><span style=\"color:#000000\"><strong><span style=\"background-color:#000000\">Dwa</span>.<span style=\"background-color:#000000\">class</span></strong></span><span style=\"color:#000000\">);</span></p>\r\n\r\n<p style=\"margin-left:101px; margin-right:5px\"><span style=\"color:#000000\">iii.</span><span style=\"color:#000000\"><strong><span style=\"background-color:#000000\">putExtras</span></strong></span><span style=\"color:#000000\">(Bbb);</span></p>\r\n\r\n<p style=\"margin-left:101px; margin-right:5px\"><span style=\"color:#000000\"><strong><span style=\"background-color:#000000\">startActivity</span></strong></span><span style=\"color:#000000\">(iii);</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">...</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">}</span></p>\r\n\r\n<p>&nbsp;</p>",
+            "answer": "<p style=\"margin-left:96px\"><span style=\"color:#000000\">onCreate(...)</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">{</span></p>\r\n\r\n<p style=\"margin-left:101px; margin-right:5px\"><span style=\"color:#000000\">Intent iii = new Intent(this, </span><span style=\"color:#000000\"><strong>Dwa.class</strong></span><span style=\"color:#000000\">); //w dokumencie było .java</span></p>\r\n\r\n<p style=\"margin-left:101px; margin-right:5px\"><span style=\"color:#000000\">iii.</span><span style=\"color:#000000\"><strong>putExtras</strong></span><span style=\"color:#000000\">(Bbb);</span></p>\r\n\r\n<p style=\"margin-left:101px; margin-right:5px\"><span style=\"color:#000000\"><strong>startActivity</strong></span><span style=\"color:#000000\">(iii); //w innym dokumencie też tutaj było startActivityForResult</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">...</span></p>\r\n\r\n<p style=\"margin-left:96px\"><span style=\"color:#000000\">}</span></p>"
+        },
+        {
+            "question": "<ol start=\"15\">\r\n\t<li style=\"list-style-type:decimal\"><span style=\"color:#000000\">Do przełączania fragment&oacute;w widocznych na ekranie używa się?//wykład 5, strona 9</span></li>\r\n</ol>\r\n\r\n<p style=\"list-style-type:decimal\">a. FragmentManager</p>\r\n\r\n<p style=\"list-style-type:decimal\">b. Replace</p>\r\n\r\n<p style=\"list-style-type:decimal\">c. FragmentTransaction</p>\r\n\r\n<p style=\"list-style-type:decimal\">d. FragmentInflater</p>\r\n\r\n<p style=\"list-style-type:decimal\">e. FragmentReplace</p>",
+            "answer": "<p>a. FragmentManager</p>\r\n\r\n<p>b. Replace</p>\r\n\r\n<p><strong>c. FragmentTransaction</strong></p>\r\n\r\n<p>d. FragmentInflater</p>\r\n\r\n<p>e. FragmentReplace</p>"
+        },
+        {
+            "question": "<p><span style=\"color:#000000\">Kt&oacute;re z działań powinno byc zaimplementowane w celu realizacji zalecanego schematu </span></p>\r\n\r\n<p><img src=\"/media/uploads/2024/01/29/image_KPDNCkI.png\" style=\"height:136px; width:623px\" /></p>\r\n\r\n<p><img src=\"/media/uploads/2024/01/29/image_2v6J94M.png\" style=\"height:131px; width:624px\" /></p>",
+            "answer": "<p><span style=\"color:#000000\"><img src=\"https://lh7-us.googleusercontent.com/LN_My0t67vKjyqOlnEG2wQGhd-I92xUB3nyN_bl6k-BlB6VofndNmOD8c7rEW8YhTyg7DIRqNp3GU3zLMdpDfbXW7Y7SxAyFHKTPkMOL52jBuTxDvAh_-tTq_yNbGJpeBln6Nj-eWmYGp4r1eoyjng\" style=\"height:215px; width:602px\" /></span></p>\r\n\r\n<p><span style=\"color:#000000\"><img src=\"https://lh7-us.googleusercontent.com/e6DQdBZBI3m6C4rsDZNKzurkHnXrDgRgZWSODTccraKNb8OJMXu8X7z6dvdHKp3vZ288YN5bs12x1OKReGUmp9saqmirQLmGqC3ODsudpJJXniJUTa475HC7pgCHxEBAqgDv-R5H65FZ7qWn-be0jg\" style=\"height:211px; width:602px\" /></span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<p><span style=\"color:#000000\">(n) Zadaniem metody getView(...) własnego adaptera dla listy o dostosowanym widoku jest:</span></p>\r\n\r\n<ol>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Utworzenie nowego obiektu widoku przy pierwszym wywołaniu metody</span></li>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Pobieranie widoku pozycji listy</span></li>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Dostarczenie widoku dla każdej pozycji listy</span></li>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Tworzenie nowych obiekt&oacute;w widok&oacute;w dla każdego wywołania&nbsp;</span></li>\r\n</ol>",
+            "answer": "<ol>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\"><strong>Utworzenie nowego obiektu widoku przy pierwszym wywołaniu metody</strong></span></li>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Pobieranie widoku pozycji listy</span></li>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\"><strong>Dostarczenie widoku dla każdej pozycji listy</strong></span></li>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Tworzenie nowych obiekt&oacute;w widok&oacute;w dla każdego wywołania&nbsp;</span></li>\r\n</ol>"
+        },
+        {
+            "question": "<p><span style=\"color:#000000\">&nbsp;(1) Ile razy (lub kiedy) musi być tworzony kontener na elementy widoku pozycji listy (ViewHolder) w adapterze dla aktywności/fragmentu z listą?</span></p>\r\n\r\n<ol>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Podczas lub po dodaniu nowego elementu (pozycji) listy&nbsp;</span></li>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Gdy zawiadamiamy (notyfikacja) adapter o zmianach</span></li>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Za każdym razem gdy odświeżana jest lista</span></li>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Jeden raz</span></li>\r\n</ol>",
+            "answer": "<ol>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\"><strong>Podczas lub po dodaniu nowego elementu (pozycji) listy&nbsp;</strong></span></li>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Gdy zawiadamiamy (notyfikacja) adapter o zmianach</span></li>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Za każdym razem gdy odświeżana jest lista</span></li>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\">Jeden raz</span></li>\r\n</ol>"
+        },
+        {
+            "question": "<p><span style=\"color:#000000\"><img src=\"https://lh7-us.googleusercontent.com/T4RBEOCtrL1e0AryEgXzVn9T2bGkK25yRHH0pfr64-ZHjqnKgW7UYfXGvHUdK8kqmNL70lm-YYJqsceUb90K1a4CTq3RZG7VWcMhLpnShn_yYfYDCArrsmVE65WxUbZOodp2d70CgR7Fcik1Z5CWJw\" style=\"height:250px; width:578px\" /></span></p>",
+            "answer": "<p><span style=\"color:#000000\"><strong>OnCreate, OnStart, OnResume&nbsp;</strong></span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<p><span style=\"color:#000000\"><img src=\"https://lh7-us.googleusercontent.com/kV9Ktox3NkbCjtB3YaPah-N8jCWuriaugWazXyHGVyZR0NxnuQwEKJH83zqmWgrXT_AYogfV_4PNZx1cH31pe1eQWWWEMLS3_dLRhJor2_Q6AHl-Pa6wLXXzOJWGz-r9eEGAcOW-Wkd0EztTIAhejA\" style=\"height:260px; width:602px\" /></span></p>",
+            "answer": "<p><span style=\"color:#000000\"><strong>A) resolveActivity()</strong></span></p>"
+        },
+        {
+            "question": "<p><span style=\"color:#000000\"><img src=\"https://lh7-us.googleusercontent.com/mmeybi4iDU_8_dh7pGOy5tvpAqnMbEiJt0a2m_UBRtXTWprEPGu2--htVqFv-50fxwR-QZUxIr1OEZboHTLnB0LU4b6XUJuWV5orXd1ObwPG_cb3bBbn9tVC61okCoLuayzAXg001hzbofKjsca9zA\" style=\"height:163px; width:602px\" /></span></p>",
+            "answer": "<p>?</p>"
+        },
+        {
+            "question": "<p><span style=\"color:#000000\"><img src=\"https://lh7-us.googleusercontent.com/_j23vwoSuDIV6rBf6tbGXjba54hWth57xh97z2J7nX8l1cflxtN55Y8m8064obgM_wBxluYV2vOOJ-XjsXkZlWG3KxkMni0mXgf3Urk4k0IWgX9fHT8RQ9lk_k6Am44K3LReBSQIUJfkE7TaGVvMvw\" style=\"height:228px; width:602px\" /></span></p>",
+            "answer": "<ol>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\"><strong>Prepare() i start()</strong></span></li>\r\n\t<li style=\"list-style-type:upper-alpha\"><span style=\"color:#000000\"><strong>prepareAsync() i onPrepared() (nie ma takiej odpowiedzi xd)</strong></span></li>\r\n</ol>"
+        },
+        {
+            "question": "<p><span style=\"color:#000000\"><img src=\"https://lh7-us.googleusercontent.com/-uU4BT0B6PGoQeaeU52dB3VJHH66KQWdWFPEJ_qRkiI3MPznSzEpLSBcnZJe9El9hZsACIdU8M9DkGq9VRQdodWyFSLLYJ0HMbLARdySkHokiQ2b-qTf7AH1_wUul7hrmi-a4aRXUxTX3ycfXLAixw\" style=\"height:193px; width:602px\" /></span></p>\r\n\r\n<p>&nbsp;</p>",
+            "answer": "<p><span style=\"color:#000000\"><strong>A. C (provide to MediaStoreontentResolver)</strong></span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<p><span style=\"color:#000000\"><img src=\"https://lh7-us.googleusercontent.com/GsuTU6PlbyFAfyYbaG0lWKTSSNGQanEIVpjQg2LXTms752bA-GNfEmo4fA6QF9093rtWDUuHTtKAVY868hCaLYkr8VvgFTUP4TKl_keMwGQ8XLj2JJ79Oyd0l6fKraq_yfZH1CN4u7iap0NSE2oveA\" style=\"height:231px; width:602px\" /></span></p>",
+            "answer": "<p><span style=\"color:#000000\"><strong>setContentView i findViewById</strong></span></p>\r\n\r\n<p>&nbsp;</p>"
+        },
+        {
+            "question": "<p>Jaka metoda jest wywowyłana gdy pojawia się nowa dana o lokalizacji?<br />\r\n(Chodzi o Android Location API)</p>",
+            "answer": "<p>onLocationChanged</p>"
+        },
+        {
+            "question": "<p>Kt&oacute;rą metodę należy użyć, aby wykonać nagranie wideo z użyciem systemowej aplikacji Camera do nagrywania?</p>\r\n\r\n<p>A. prepare</p>\r\n\r\n<p>B. setCameraUri</p>\r\n\r\n<p>C. resolveActivity</p>\r\n\r\n<p>D. prepareCamera</p>\r\n\r\n<p>E. startActivity</p>",
+            "answer": "<p>A. prepare</p>\r\n\r\n<p>B. setCameraUri</p>\r\n\r\n<p><strong>C. resolveActivity</strong></p>\r\n\r\n<p>D. prepareCamera</p>\r\n\r\n<p>E. startActivity</p>"
+        },
+        {
+            "question": "<p>Kt&oacute;re działanie koniecznie trzeba wykonać aby zaimplementować nawigację między fragmentami dla paska nawigacji BottomNavigationView z użyciem frameworka Navigation?</p>\r\n\r\n<p>A. użycie layout&#39;a DrawerLayout</p>\r\n\r\n<p>B. Uzyskanie kontrolera nawigacji (NavController)</p>\r\n\r\n<p>C. Zdefiniowania akcji (action) w grafie nawigacji</p>\r\n\r\n<p>D. Zdefiniowania fragment&oacute;w w grafie nawigacji</p>\r\n\r\n<p>E. Zdefiniowanie widoku nawigacji NavigationView</p>",
+            "answer": "<p>A. użycie layout&#39;a DrawerLayout</p>\r\n\r\n<p><strong>B. Uzyskanie kontrolera nawigacji (NavController)</strong></p>\r\n\r\n<p><strong>C. Zdefiniowania akcji (action) w grafie nawigacji</strong></p>\r\n\r\n<p><strong>D. Zdefiniowania fragment&oacute;w w grafie nawigacji</strong></p>\r\n\r\n<p>E. Zdefiniowanie widoku nawigacji NavigationView</p>"
+        },
+        {
+            "question": "<p><img src=\"/media/uploads/2024/01/29/image_3KXkj20.png\" style=\"height:410px; width:1117px\" /></p>",
+            "answer": "<p><strong>setContentView, getViewById</strong></p>"
+        },
+        {
+            "question": "<p>W aktywności umieszczony jest fragment, a wewnątrz fragmentu kolejny fragment.</p>\r\n\r\n<p>Co może być użyte do wymiany danych między fragmentami z użyciem słuchacza odbioru rezultat&oacute;w?</p>\r\n\r\n<p>A. Jeden używa childFragmentManager, a jeden parentFragmentManager</p>\r\n\r\n<p>B. Oba używają parentFragmentManager</p>\r\n\r\n<p>C. Jeden używa supportFragmentManager, a jeden childFragmentManager</p>\r\n\r\n<p>D. Oba używają supportFragmentManager</p>",
+            "answer": "<p><strong>A. Jeden używa childFragmentManager, a jeden parentFragmentManager</strong></p>\r\n\r\n<p>B. Oba używają parentFragmentManager</p>\r\n\r\n<p>C. Jeden używa supportFragmentManager, a jeden childFragmentManager</p>\r\n\r\n<p>D. Oba używają supportFragmentManager</p>"
+        },
+        {
+            "question": "<p><img src=\"/media/uploads/2024/01/29/image_IHlJXmi.png\" style=\"height:326px; width:1057px\" /></p>",
+            "answer": "<p>B, D</p>"
+        },
+        {
+            "question": "<p>Podaj nazwy metod kt&oacute;re są wykonywane przy uruchamianiu aktywności w systemie Android<br />\r\n<img src=\"/media/uploads/2024/01/29/image_uETDtXR.png\" style=\"height:280px; width:447px\" /></p>",
+            "answer": "<p>onCreate, onStart, onResume</p>"
+        },
+        {
+            "question": "<p><img src=\"/media/uploads/2024/01/29/image_BV3Xx8H.png\" style=\"height:489px; width:1100px\" /></p>",
+            "answer": "<p>createFragment, newInstance</p>"
+        },
+        {
+            "question": "<p>W kt&oacute;rej metodzie możemy ustawić częstotliwość pr&oacute;bkowania dla sensora w systemie Android?</p>",
+            "answer": "<p><strong>registerListener</strong></p>"
+        },
+        {
+            "question": "<p>Jakie jest przeznaczenie metody <strong>onPrepareActionMode</strong>?</p>\r\n\r\n<p>A. Jest używana do robienia zdjęć z kamery systemowej</p>\r\n\r\n<p>B. Służy do implemetacji menu kontekstowego dla widoku</p>\r\n\r\n<p>C. Jest używana do uruchomienia innej aktywności</p>\r\n\r\n<p>D. służy do przygotowania odtwarzania multimedi&oacute;w wideo.</p>",
+            "answer": "<p><strong>B. Służy do implemetacji menu kontekstowego dla widoku</strong></p>"
+        },
+        {
+            "question": "<p><img src=\"/media/uploads/2024/01/29/image_muf8iEt.png\" style=\"height:614px; width:1121px\" /></p>",
+            "answer": "<p>najprawdopodobniej<strong> A i E</strong></p>"
+        },
+        {
+            "question": "<p>Jakie elementy mogą być brane pod uwagę, przy wyborze przez system Android, aktywności do uruchomienia poprzez mechanizm filtrowania intecji?</p>\r\n\r\n<p>A. uprawnienia aktywności</p>\r\n\r\n<p>B. nazwa klasy aktywności</p>\r\n\r\n<p>C. typ przekazywania danych</p>\r\n\r\n<p>D. nazwa akcji intencji</p>",
+            "answer": "<p><strong>B. nazwa klasy aktywności</strong></p>\r\n\r\n<p><strong>D. nazwa akcji intencji</strong></p>"
+        },
+        {
+            "question": "<p>Podaj nazwy metod kt&oacute;re przy uruchomieniu aktywności w systemie Android są wykonywane dla fragmentu (klasy Fragment) w tej aktywności. Podaj tylko te metody, kt&oacute;re nie występują dla aktywności(klasu Activity)</p>\r\n\r\n<p><img src=\"/media/uploads/2024/01/29/image_tDqPQ4X.png\" style=\"height:236px; width:372px\" /></p>",
+            "answer": "<p><strong>onAttach, onCreateView, onViewCreated</strong></p>"
+        },
+        {
+            "question": "<p>Jest obiekt <strong>sp</strong> typu <strong>SharedPreferences.&nbsp;</strong>Należy zapisać zmienną całkowitą&nbsp;<strong>xxx&nbsp;</strong>do pamięci wsp&oacute;łdzielonej. Kt&oacute;re, z poniższych poleceń jest prawidłowe jako jedno z tych kt&oacute;re musi być użyte do realizacji tego działania?</p>\r\n\r\n<p>A. sp.putInt(var xxx)</p>\r\n\r\n<p>B. sp.putInt(&quot;jakas_nazwa&quot;, xxx)</p>\r\n\r\n<p>C sp.Write(xxx)</p>\r\n\r\n<p>D. sp.put(&quot;jakas_nazwa&quot;, xxx)</p>\r\n\r\n<p>E. var e=sp.edit()</p>",
+            "answer": "<p><strong>B. sp.putInt(&quot;jakas_nazwa&quot;, xxx)</strong></p>"
+        },
+        {
+            "question": "<p>Implementujesz wymianę komunikat&oacute;w pomiędzy dwoma fragmentami.</p>\r\n\r\n<p>Kt&oacute;re komponenty programowe (klasy, metody, interfejsy, itp.) musisz użyć w tym celu?<br />\r\nA. obiekt typu Result</p>\r\n\r\n<p>B. metodę setFragmentResultListener</p>\r\n\r\n<p>C. obiekt typu ParentFragmentManager</p>\r\n\r\n<p>D. metodę startFragmentForResult</p>\r\n\r\n<p>E. metodę registerForFragmentResult</p>\r\n\r\n<p>F. obiekt typu FragmentTransaction</p>",
+            "answer": "<p><strong>B. metodę setFragmentResultListener</strong></p>"
+        },
+        {
+            "question": "<p><img src=\"/media/uploads/2024/01/29/image_q9cs9EJ.png\" style=\"height:629px; width:999px\" /></p>",
+            "answer": "<p><strong>B, D, E</strong></p>"
+        },
+        {
+            "question": "<p>W metodzie nawigacji kontrolera nawigacji <strong>navigate(...)</strong>&nbsp;podaje się jako parametr identyfikator specyfikukący element docelowy.</p>\r\n\r\n<p>Gdzie definiuje się ten identyfikator?</p>\r\n\r\n<p>A. W menu elementu nawigacji (Navigation drawer lub ButtomNavigation)</p>\r\n\r\n<p>B. W elemencie węzła navigation w grafie nawigacji</p>\r\n\r\n<p>C. W układzie widok&oacute;w (layout) elementu docelowego</p>\r\n\r\n<p>D. W węźle NavigationView grafu nawigacji</p>",
+            "answer": "<p><strong>B. W elemencie węzła navigation w grafie nawigacji</strong></p>"
+        },
+        {
+            "question": "<p>Jakie jest działanie metody związanej z dostępem do plik&oacute;w:&nbsp;<strong>getFilesDir?</strong></p>\r\n\r\n<p>A. dostarcza ścieżkę bezwzględną katalogu prywatnego aplikacji w pamięci zewnętrznej</p>\r\n\r\n<p>B. dostarcza ścieżkę bezwzględną katalogu w pamięci wsp&oacute;łdzielonej (shared storage)</p>\r\n\r\n<p>C. dostarcza ścieżkę do bieżącego katalogu aplikacji</p>\r\n\r\n<p>D. dostarcza ścieżkę bezwzględną katalogu prywatnego aplikacji w pamięci wewnętrznej&nbsp;</p>",
+            "answer": "<p><strong>D. dostarcza ścieżkę bezwzględną katalogu prywatnego aplikacji w pamięci wewnętrznej&nbsp;</strong></p>"
+        },
+        {
+            "question": "<p>Ile metod powinien zawierać konwerter danych dla frameworka Room (klasa z dekoratorem @TypeConverters), używany dla własnych typ&oacute;w danych w bazie.</p>\r\n\r\n<p>A. Co najmniej jedną</p>\r\n\r\n<p>B. Dokładnie jedną</p>\r\n\r\n<p>C. Co najmniej cztery</p>\r\n\r\n<p>D. Co najmniej dwie</p>\r\n\r\n<p>E. Co najmniej trzy</p>",
+            "answer": "<p><strong>D. Co najmniej dwie</strong></p>"
+        },
+        {
+            "question": "<p><img src=\"/media/uploads/2024/01/29/image_16u6Qy4.png\" style=\"height:367px; width:1121px\" /></p>",
+            "answer": "<p><strong>A, E</strong></p>"
+        },
+        {
+            "question": "<p><img src=\"/media/uploads/2024/01/29/image_Ybms91a.png\" style=\"height:276px; width:1116px\" /></p>",
+            "answer": "<p><strong>vbinding.root</strong></p>"
+        },
+        {
+            "question": "<p><img src=\"/media/uploads/2024/01/29/image_y4hWHHe.png\" style=\"height:440px; width:1135px\" /></p>",
+            "answer": "<p><strong>registerForActivityResult, Uri, launch</strong></p>"
+        },
+        {
+            "question": "<p><img src=\"/media/uploads/2024/01/29/image_lm7fIA6.png\" style=\"height:394px; width:1122px\" /></p>",
+            "answer": "<p><strong>E</strong></p>"
+        },
+        {
+            "question": "<p>Z użyciem jakiego dekoratora/adnotacji definiuje się tabelę w Room dla systemu bazodanowego Android?</p>\r\n\r\n<p>A. @Dao</p>\r\n\r\n<p>B. @Tuple</p>\r\n\r\n<p>C. @Record</p>\r\n\r\n<p>D. @Entity</p>\r\n\r\n<p>E. @Table</p>",
+            "answer": "<p><strong>D. @Entity</strong></p>"
+        },
+        {
+            "question": "<p>Wpisz nazwę jednej z metod (ale innej niż getItemCount) absolutnie wymaganej do implementacji adaptera dla RecyclerView:<br />\r\n<img src=\"/media/uploads/2024/01/29/image_RprlBDC.png\" style=\"height:138px; width:399px\" /></p>",
+            "answer": "<p><strong>onCreateViewHolder </strong>lub <strong>onBindViewHolder</strong></p>"
+        }
+    ]
+}
